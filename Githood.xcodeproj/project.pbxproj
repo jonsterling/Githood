@@ -1,0 +1,465 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FC32580A12D6738E00EB47A3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC32580912D6738E00EB47A3 /* UIKit.framework */; };
+		FC32580C12D6738E00EB47A3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC32580B12D6738E00EB47A3 /* Foundation.framework */; };
+		FC32580E12D6738E00EB47A3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC32580D12D6738E00EB47A3 /* CoreGraphics.framework */; };
+		FC32581312D6738E00EB47A3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FC32581112D6738E00EB47A3 /* InfoPlist.strings */; };
+		FC32581512D6738E00EB47A3 /* Githood-main.m in Sources */ = {isa = PBXBuildFile; fileRef = FC32581412D6738E00EB47A3 /* Githood-main.m */; };
+		FC32581812D6738E00EB47A3 /* GithoodAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FC32581712D6738E00EB47A3 /* GithoodAppDelegate.m */; };
+		FC32581B12D6738E00EB47A3 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC32581912D6738E00EB47A3 /* MainWindow.xib */; };
+		FC32581E12D6738E00EB47A3 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC32581D12D6738E00EB47A3 /* RootViewController.m */; };
+		FC32582112D6738E00EB47A3 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC32581F12D6738E00EB47A3 /* RootViewController.xib */; };
+		FC32582912D6738E00EB47A3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC32580912D6738E00EB47A3 /* UIKit.framework */; };
+		FC32582A12D6738E00EB47A3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC32580B12D6738E00EB47A3 /* Foundation.framework */; };
+		FC32582B12D6738E00EB47A3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC32580D12D6738E00EB47A3 /* CoreGraphics.framework */; };
+		FC32582F12D6738E00EB47A3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FC32582E12D6738E00EB47A3 /* InfoPlist.strings */; };
+		FC32583112D6738E00EB47A3 /* GithoodTests.h in Resources */ = {isa = PBXBuildFile; fileRef = FC32583012D6738E00EB47A3 /* GithoodTests.h */; };
+		FC32583312D6738E00EB47A3 /* GithoodTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FC32583212D6738E00EB47A3 /* GithoodTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FC32580612D6738E00EB47A3 /* Githood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Githood.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC32580912D6738E00EB47A3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FC32580B12D6738E00EB47A3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FC32580D12D6738E00EB47A3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FC32580F12D6738E00EB47A3 /* Githood-Info.plist */ = {isa = PBXFileReference; path = "Githood-Info.plist"; sourceTree = "<group>"; };
+		FC32581012D6738E00EB47A3 /* Githood-Prefix.pch */ = {isa = PBXFileReference; path = "Githood-Prefix.pch"; sourceTree = "<group>"; };
+		FC32581212D6738E00EB47A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FC32581412D6738E00EB47A3 /* Githood-main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Githood-main.m"; sourceTree = "<group>"; };
+		FC32581612D6738E00EB47A3 /* GithoodAppDelegate.h */ = {isa = PBXFileReference; path = GithoodAppDelegate.h; sourceTree = "<group>"; };
+		FC32581712D6738E00EB47A3 /* GithoodAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GithoodAppDelegate.m; sourceTree = "<group>"; };
+		FC32581A12D6738E00EB47A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		FC32581C12D6738E00EB47A3 /* RootViewController.h */ = {isa = PBXFileReference; path = RootViewController.h; sourceTree = "<group>"; };
+		FC32581D12D6738E00EB47A3 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		FC32582012D6738E00EB47A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RootViewController.xib; sourceTree = "<group>"; };
+		FC32582812D6738E00EB47A3 /* GithoodTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GithoodTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC32582C12D6738E00EB47A3 /* GithoodTests-Info.plist */ = {isa = PBXFileReference; path = "GithoodTests-Info.plist"; sourceTree = "<group>"; };
+		FC32582D12D6738E00EB47A3 /* GithoodTests-Prefix.pch */ = {isa = PBXFileReference; path = "GithoodTests-Prefix.pch"; sourceTree = "<group>"; };
+		FC32582E12D6738E00EB47A3 /* InfoPlist.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = en.lproj/GithoodTests/InfoPlist.strings; sourceTree = "<group>"; };
+		FC32583012D6738E00EB47A3 /* GithoodTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GithoodTests.h; sourceTree = "<group>"; };
+		FC32583212D6738E00EB47A3 /* GithoodTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GithoodTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FC32580312D6738E00EB47A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC32580A12D6738E00EB47A3 /* UIKit.framework in Frameworks */,
+				FC32580C12D6738E00EB47A3 /* Foundation.framework in Frameworks */,
+				FC32580E12D6738E00EB47A3 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC32582412D6738E00EB47A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC32582912D6738E00EB47A3 /* UIKit.framework in Frameworks */,
+				FC32582A12D6738E00EB47A3 /* Foundation.framework in Frameworks */,
+				FC32582B12D6738E00EB47A3 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FC3257F712D6738E00EB47A3 = {
+			isa = PBXGroup;
+			children = (
+				FC3257FE12D6738E00EB47A3 /* Classes */,
+				FC3257FF12D6738E00EB47A3 /* Other Sources */,
+				FC32580012D6738E00EB47A3 /* Resources */,
+				FC32580112D6738E00EB47A3 /* Frameworks */,
+				FC32580712D6738E00EB47A3 /* Products */,
+				FC32582212D6738E00EB47A3 /* Tests */,
+			);
+			sourceTree = "<group>";
+		};
+		FC3257FE12D6738E00EB47A3 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				FC32581612D6738E00EB47A3 /* GithoodAppDelegate.h */,
+				FC32581712D6738E00EB47A3 /* GithoodAppDelegate.m */,
+				FC32581C12D6738E00EB47A3 /* RootViewController.h */,
+				FC32581D12D6738E00EB47A3 /* RootViewController.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		FC3257FF12D6738E00EB47A3 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				FC32581012D6738E00EB47A3 /* Githood-Prefix.pch */,
+				FC32581412D6738E00EB47A3 /* Githood-main.m */,
+				FC32582D12D6738E00EB47A3 /* GithoodTests-Prefix.pch */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		FC32580012D6738E00EB47A3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FC32580F12D6738E00EB47A3 /* Githood-Info.plist */,
+				FC32581112D6738E00EB47A3 /* InfoPlist.strings */,
+				FC32581912D6738E00EB47A3 /* MainWindow.xib */,
+				FC32581F12D6738E00EB47A3 /* RootViewController.xib */,
+				FC32582C12D6738E00EB47A3 /* GithoodTests-Info.plist */,
+				FC32582E12D6738E00EB47A3 /* InfoPlist.strings */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		FC32580112D6738E00EB47A3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FC32580912D6738E00EB47A3 /* UIKit.framework */,
+				FC32580B12D6738E00EB47A3 /* Foundation.framework */,
+				FC32580D12D6738E00EB47A3 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FC32580712D6738E00EB47A3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FC32580612D6738E00EB47A3 /* Githood.app */,
+				FC32582812D6738E00EB47A3 /* GithoodTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FC32582212D6738E00EB47A3 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				FC32583012D6738E00EB47A3 /* GithoodTests.h */,
+				FC32583212D6738E00EB47A3 /* GithoodTests.m */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FC32580512D6738E00EB47A3 /* Githood */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC32583812D6738E00EB47A3 /* Build configuration list for PBXNativeTarget "Githood" */;
+			buildPhases = (
+				FC32580212D6738E00EB47A3 /* Sources */,
+				FC32580312D6738E00EB47A3 /* Frameworks */,
+				FC32580412D6738E00EB47A3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Githood;
+			productName = Githood;
+			productReference = FC32580612D6738E00EB47A3 /* Githood.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FC32582712D6738E00EB47A3 /* GithoodTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC32583B12D6738E00EB47A3 /* Build configuration list for PBXNativeTarget "GithoodTests" */;
+			buildPhases = (
+				FC32582312D6738E00EB47A3 /* Sources */,
+				FC32582412D6738E00EB47A3 /* Frameworks */,
+				FC32582512D6738E00EB47A3 /* Resources */,
+				FC32582612D6738E00EB47A3 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GithoodTests;
+			productName = GithoodTests;
+			productReference = FC32582812D6738E00EB47A3 /* GithoodTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FC3257F912D6738E00EB47A3 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = FC3257FC12D6738E00EB47A3 /* Build configuration list for PBXProject "Githood" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = FC3257F712D6738E00EB47A3;
+			productRefGroup = FC32580712D6738E00EB47A3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FC32580512D6738E00EB47A3 /* Githood */,
+				FC32582712D6738E00EB47A3 /* GithoodTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FC32580412D6738E00EB47A3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC32581312D6738E00EB47A3 /* InfoPlist.strings in Resources */,
+				FC32581B12D6738E00EB47A3 /* MainWindow.xib in Resources */,
+				FC32582112D6738E00EB47A3 /* RootViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC32582512D6738E00EB47A3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC32582F12D6738E00EB47A3 /* InfoPlist.strings in Resources */,
+				FC32583112D6738E00EB47A3 /* GithoodTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FC32582612D6738E00EB47A3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FC32580212D6738E00EB47A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC32581512D6738E00EB47A3 /* Githood-main.m in Sources */,
+				FC32581812D6738E00EB47A3 /* GithoodAppDelegate.m in Sources */,
+				FC32581E12D6738E00EB47A3 /* RootViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC32582312D6738E00EB47A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC32583312D6738E00EB47A3 /* GithoodTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FC32581112D6738E00EB47A3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FC32581212D6738E00EB47A3 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FC32581912D6738E00EB47A3 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FC32581A12D6738E00EB47A3 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		FC32581F12D6738E00EB47A3 /* RootViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FC32582012D6738E00EB47A3 /* en */,
+			);
+			name = RootViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FC32583412D6738E00EB47A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				PREBINDING = NO;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FC32583512D6738E00EB47A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PREBINDING = NO;
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		FC32583612D6738E00EB47A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		FC32583712D6738E00EB47A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		FC32583912D6738E00EB47A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Githood-Prefix.pch";
+				INFOPLIST_FILE = "Githood-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		FC32583A12D6738E00EB47A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Githood-Prefix.pch";
+				INFOPLIST_FILE = "Githood-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		FC32583C12D6738E00EB47A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GithoodTests-Prefix.pch";
+				INFOPLIST_FILE = "GithoodTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		FC32583D12D6738E00EB47A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GithoodTests-Prefix.pch";
+				INFOPLIST_FILE = "GithoodTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+		FC32583E12D6738E00EB47A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = GithoodTests;
+			};
+			name = Debug;
+		};
+		FC32583F12D6738E00EB47A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				PRODUCT_NAME = GithoodTests;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FC3257FC12D6738E00EB47A3 /* Build configuration list for PBXProject "Githood" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC32583412D6738E00EB47A3 /* Debug */,
+				FC32583512D6738E00EB47A3 /* Release */,
+				FC32583612D6738E00EB47A3 /* Debug */,
+				FC32583712D6738E00EB47A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FC32583812D6738E00EB47A3 /* Build configuration list for PBXNativeTarget "Githood" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC32583912D6738E00EB47A3 /* Debug */,
+				FC32583A12D6738E00EB47A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FC32583B12D6738E00EB47A3 /* Build configuration list for PBXNativeTarget "GithoodTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC32583C12D6738E00EB47A3 /* Debug */,
+				FC32583D12D6738E00EB47A3 /* Release */,
+				FC32583E12D6738E00EB47A3 /* Debug */,
+				FC32583F12D6738E00EB47A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FC3257F912D6738E00EB47A3 /* Project object */;
+}
