@@ -3,8 +3,14 @@
 #import "GitHubCommit.h"
 #import "GitHubRepository.h"
 
+@interface GHCommitsTableViewController ()
+@property (nonatomic, readonly) GHCommitsTableModel *tableModel;
+@end
+
+
 @implementation GHCommitsTableViewController
 @synthesize repository;
+@dynamic tableModel;
 
 + (Class)modelClass {
   return [GHCommitsTableModel class];
@@ -16,7 +22,7 @@
   self.title = @"Commits";
   self.tableView.rowHeight = 65; 
   
-  [(GHCommitsTableModel *)self.tableModel setRepository:self.repository];
+  self.tableModel.repository = self.repository;
   [self.tableModel refreshData];
 }
 
