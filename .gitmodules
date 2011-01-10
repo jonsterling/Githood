@@ -1,6 +1,6 @@
 [submodule "vendor/LRTableModel"]
 	path = vendor/LRTableModel
-	url = https://github.com/lukeredpath/LRTableModel.git
+	url = https://github.com/jonsterling/LRTableModel.git
 [submodule "vendor/GitHubObjC"]
 	path = vendor/GitHubObjC
 	url = https://github.com/jonsterling/GitHubObjC.git
