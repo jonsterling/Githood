@@ -3,6 +3,10 @@
 #import "GitHubRepository.h"
 #import "GHCommitsTableViewController.h"
 
+@interface GHReposTableViewController ()
+@property (nonatomic, readonly) GHReposTableModel *tableModel;
+@end
+
 @implementation GHReposTableViewController
 
 + (Class)modelClass {

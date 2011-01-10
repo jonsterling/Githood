@@ -7,7 +7,6 @@
 @end
 
 @implementation GHReposTableModel
-@synthesize username;
 
 - (void)refreshData {
   [self setObjects:[NSArray array]];

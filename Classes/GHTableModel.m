@@ -3,20 +3,25 @@
 #import "GitHubRepositoryServiceFactory.h"
 #import "GitHubServiceGotCommitDelegate.h"
 
+@interface GHTableModel ()
+@property (nonatomic, readonly) NSMutableArray *mutableObjects;
+@end
+
+
 @implementation GHTableModel
-@synthesize objects;
+@dynamic objects;
 
 #pragma mark -
 #pragma mark Setup and Teardown
 
 - (id)initWithCellProvider:(id <LRTableModelCellProvider>)provider {
-  if (self = [super initWithCellProvider:provider]) {
-    objects = [NSMutableArray new];
+  if ((self = [super initWithCellProvider:provider])) {
+    mutableObjects = [NSMutableArray new];
   } return self;
 }
 
 - (void)dealloc {
-  [objects release];
+  [self releaseProperties];
   [super dealloc];
 }
 
@@ -25,7 +30,7 @@
 #pragma mark CRUD
 
 - (void)addObject:(id)object {
-  [self.objects addObject:object];
+  [self.mutableObjects addObject:object];
 
   NSInteger i = [self.objects indexOfObject:object];
   [self notifyListeners:[LRTableModelEvent insertionAtRow:i section:0]];
@@ -33,23 +38,27 @@
 
 - (void)removeObject:(id)object {
   NSInteger i = [self.objects indexOfObject:object];
-  [self.objects removeObject:object];
+  [self.mutableObjects removeObject:object];
   [self notifyListeners:[LRTableModelEvent deletedRow:i section:0]];
 }
 
 - (void)replaceObjectAtIndex:(NSInteger)index withObject:(id)object {
-  [self.objects replaceObjectAtIndex:index withObject:object];
+  [self.mutableObjects replaceObjectAtIndex:index withObject:object];
   [self notifyListeners:[LRTableModelEvent updatedRow:index section:0]];
 }
 
 - (void)insertObject:(id)object atIndex:(NSInteger)index {
-  [self.objects insertObject:object atIndex:index];
+  [self.mutableObjects insertObject:object atIndex:index];
   [self notifyListeners:[LRTableModelEvent insertionAtRow:index section:0]];
 }
 
+- (NSArray *)objects {
+  return self.mutableObjects;
+}
+
 - (void)setObjects:(NSArray *)newObjects {
-  [self.objects removeAllObjects];
-  [self.objects setArray:newObjects];
+  [self.mutableObjects removeAllObjects];
+  [self.mutableObjects setArray:newObjects];
   [self notifyListeners:[LRTableModelEvent refreshedData]];
 }
 
