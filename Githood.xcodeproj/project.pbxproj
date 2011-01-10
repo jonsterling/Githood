@@ -67,6 +67,7 @@
 		FC3927FC12D69FC500F5A82A /* LRTableModelEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3927F812D69FC500F5A82A /* LRTableModelEvent.m */; };
 		FC3927FD12D69FC500F5A82A /* LRAbstractTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3927FB12D69FC500F5A82A /* LRAbstractTableModel.m */; };
 		FC39281112D6A0CB00F5A82A /* GHTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FC39281012D6A0CB00F5A82A /* GHTableModel.m */; };
+		FC4BFFF012DB9385009575D7 /* NSObject+ReleaseProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FC4BFFEF12DB9385009575D7 /* NSObject+ReleaseProperties.m */; };
 		FCC39D5B12DAB4D100364773 /* GHCommitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC39D5912DAB4D100364773 /* GHCommitViewController.m */; };
 		FCC39D5C12DAB4D100364773 /* GHCommitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCC39D5A12DAB4D100364773 /* GHCommitViewController.xib */; };
 /* End PBXBuildFile section */
@@ -208,6 +209,8 @@
 		FC3927FB12D69FC500F5A82A /* LRAbstractTableModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRAbstractTableModel.m; sourceTree = "<group>"; };
 		FC39280F12D6A0CB00F5A82A /* GHTableModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHTableModel.h; sourceTree = "<group>"; };
 		FC39281012D6A0CB00F5A82A /* GHTableModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHTableModel.m; sourceTree = "<group>"; };
+		FC4BFFEE12DB9385009575D7 /* NSObject+ReleaseProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+ReleaseProperties.h"; path = "Classes/NSObject+ReleaseProperties.h"; sourceTree = "<group>"; };
+		FC4BFFEF12DB9385009575D7 /* NSObject+ReleaseProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+ReleaseProperties.m"; path = "Classes/NSObject+ReleaseProperties.m"; sourceTree = "<group>"; };
 		FCC39D5812DAB4D100364773 /* GHCommitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHCommitViewController.h; sourceTree = "<group>"; };
 		FCC39D5912DAB4D100364773 /* GHCommitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHCommitViewController.m; sourceTree = "<group>"; };
 		FCC39D5A12DAB4D100364773 /* GHCommitViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GHCommitViewController.xib; sourceTree = "<group>"; };
@@ -422,6 +425,8 @@
 		FC1D78CE12D7FC9400AA4AB1 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				FC4BFFEE12DB9385009575D7 /* NSObject+ReleaseProperties.h */,
+				FC4BFFEF12DB9385009575D7 /* NSObject+ReleaseProperties.m */,
 				FC1D78CF12D7FCC000AA4AB1 /* UITableViewCell+Extension.h */,
 				FC1D78D012D7FCC000AA4AB1 /* UITableViewCell+Extension.m */,
 			);
@@ -691,6 +696,7 @@
 				FC1D7A1912D8050000AA4AB1 /* GHCommitsTableModel.m in Sources */,
 				FC1D7A2712D806B700AA4AB1 /* GHCommitsTableViewController.m in Sources */,
 				FCC39D5B12DAB4D100364773 /* GHCommitViewController.m in Sources */,
+				FC4BFFF012DB9385009575D7 /* NSObject+ReleaseProperties.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -730,13 +736,18 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_SHADOW = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				OTHER_CFLAGS = (
+					"-Xclang",
+					"-fobjc-nonfragile-abi2",
+				);
 				PREBINDING = NO;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -749,11 +760,14 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
-				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_CFLAGS = (
+					"-Xclang",
+					"-fobjc-nonfragile-abi2",
+				);
 				PREBINDING = NO;
 				SDKROOT = iphoneos;
 			};

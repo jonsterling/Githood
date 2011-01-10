@@ -10,7 +10,6 @@
 
 
 @implementation GHCommitsTableViewController
-@synthesize repository;
 @dynamic tableModel;
 
 + (id)withRepository:(id <GitHubRepository>)repository {
@@ -39,7 +38,7 @@
 }
 
 - (void)dealloc {
-  [repository release];
+  [self releaseProperties];
   [super dealloc];
 }
 

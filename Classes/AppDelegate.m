@@ -1,12 +1,10 @@
 #import "AppDelegate.h"
 
 @implementation AppDelegate
-@synthesize window;
-@synthesize navigationController;
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  [window addSubview:navigationController.view];
-  [window makeKeyAndVisible];
+- (BOOL)application:(id)application didFinishLaunchingWithOptions:(id)options {
+  [self.window addSubview:self.navigationController.view];
+  [self.window makeKeyAndVisible];
   return YES;
 }
 
@@ -16,9 +14,7 @@
 }
 
 - (void)dealloc {
-
-  [window release];
-  [navigationController release];
+  [self releaseProperties];
   [super dealloc];
 }
 

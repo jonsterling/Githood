@@ -7,7 +7,6 @@
 @end
 
 @implementation GHTableViewController
-@synthesize tableModel;
 
 + (void)initialize {
   if (self != [GHTableViewController class]) {
@@ -17,7 +16,7 @@
 }
 
 - (void)dealloc {
-  [tableModel release];
+  [self releaseProperties];
   [super dealloc];
 }
 

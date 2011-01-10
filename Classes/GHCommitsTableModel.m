@@ -8,10 +8,9 @@
 @end
 
 @implementation GHCommitsTableModel
-@synthesize repository;
 
 - (void)dealloc {
-  [repository release];
+  [self releaseProperties];
   [super dealloc];
 }
 

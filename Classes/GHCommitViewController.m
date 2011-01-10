@@ -6,11 +6,9 @@
 @end
 
 @implementation GHCommitViewController
-@synthesize commit;
-@synthesize webView;
 
 - (void)dealloc {
-  [commit release];
+  [self releaseProperties];
   [super dealloc];
 }
 
