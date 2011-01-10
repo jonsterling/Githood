@@ -31,13 +31,10 @@
 #pragma mark -
 #pragma mark UITableViewDelegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-  GHCommitsTableViewController *commitsController = [GHCommitsTableViewController new];
-  commitsController.repository = [self.tableModel objectAtIndexPath:indexPath];
-  
-  [self.navigationController pushViewController:commitsController animated:YES];
-  
-  [commitsController release];
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(id)path {
+  id <GitHubRepository> repository = [self.tableModel objectAtIndexPath:path];
+  id controller = [GHCommitsTableViewController withRepository:repository];
+  [self.navigationController pushViewController:controller animated:YES];
 }
 
 @end
