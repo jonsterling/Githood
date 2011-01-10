@@ -48,6 +48,7 @@
 		FC1D7A1912D8050000AA4AB1 /* GHCommitsTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1D7A1812D8050000AA4AB1 /* GHCommitsTableModel.m */; };
 		FC1D7A2712D806B700AA4AB1 /* GHCommitsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1D7A2612D806B700AA4AB1 /* GHCommitsTableViewController.m */; };
 		FC1D7C0612D8145000AA4AB1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC1D7C0512D8145000AA4AB1 /* QuartzCore.framework */; };
+		FC1D7D4612D8460100AA4AB1 /* navigation_bar2.png in Resources */ = {isa = PBXBuildFile; fileRef = FC1D7D4512D8460100AA4AB1 /* navigation_bar2.png */; };
 		FC32580A12D6738E00EB47A3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC32580912D6738E00EB47A3 /* UIKit.framework */; };
 		FC32580C12D6738E00EB47A3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC32580B12D6738E00EB47A3 /* Foundation.framework */; };
 		FC32580E12D6738E00EB47A3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC32580D12D6738E00EB47A3 /* CoreGraphics.framework */; };
@@ -66,6 +67,8 @@
 		FC3927FC12D69FC500F5A82A /* LRTableModelEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3927F812D69FC500F5A82A /* LRTableModelEvent.m */; };
 		FC3927FD12D69FC500F5A82A /* LRAbstractTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3927FB12D69FC500F5A82A /* LRAbstractTableModel.m */; };
 		FC39281112D6A0CB00F5A82A /* GHTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FC39281012D6A0CB00F5A82A /* GHTableModel.m */; };
+		FCC39D5B12DAB4D100364773 /* GHCommitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC39D5912DAB4D100364773 /* GHCommitViewController.m */; };
+		FCC39D5C12DAB4D100364773 /* GHCommitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCC39D5A12DAB4D100364773 /* GHCommitViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -175,6 +178,7 @@
 		FC1D7A2512D806B700AA4AB1 /* GHCommitsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHCommitsTableViewController.h; sourceTree = "<group>"; };
 		FC1D7A2612D806B700AA4AB1 /* GHCommitsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHCommitsTableViewController.m; sourceTree = "<group>"; };
 		FC1D7C0512D8145000AA4AB1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		FC1D7D4512D8460100AA4AB1 /* navigation_bar2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = navigation_bar2.png; path = Artwork/navigation_bar2.png; sourceTree = "<group>"; };
 		FC32580612D6738E00EB47A3 /* Githood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Githood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC32580912D6738E00EB47A3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FC32580B12D6738E00EB47A3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -204,6 +208,9 @@
 		FC3927FB12D69FC500F5A82A /* LRAbstractTableModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRAbstractTableModel.m; sourceTree = "<group>"; };
 		FC39280F12D6A0CB00F5A82A /* GHTableModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHTableModel.h; sourceTree = "<group>"; };
 		FC39281012D6A0CB00F5A82A /* GHTableModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHTableModel.m; sourceTree = "<group>"; };
+		FCC39D5812DAB4D100364773 /* GHCommitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHCommitViewController.h; sourceTree = "<group>"; };
+		FCC39D5912DAB4D100364773 /* GHCommitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHCommitViewController.m; sourceTree = "<group>"; };
+		FCC39D5A12DAB4D100364773 /* GHCommitViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GHCommitViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,13 +238,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		FC05E02512D6E4DE002D9843 /* Github API */ = {
+		FC05E02512D6E4DE002D9843 /* GitHub API */ = {
 			isa = PBXGroup;
 			children = (
 				FC05E02F12D6E4E7002D9843 /* Interface */,
 				FC05E04F12D6E4E7002D9843 /* Implementation */,
 			);
-			name = "Github API";
+			name = "GitHub API";
 			sourceTree = "<group>";
 		};
 		FC05E02F12D6E4E7002D9843 /* Interface */ = {
@@ -399,7 +406,7 @@
 			path = UserService;
 			sourceTree = "<group>";
 		};
-		FC1D782512D7F65100AA4AB1 /* Table Model */ = {
+		FC1D782512D7F65100AA4AB1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				FC39280F12D6A0CB00F5A82A /* GHTableModel.h */,
@@ -409,7 +416,7 @@
 				FC1D7A1712D8050000AA4AB1 /* GHCommitsTableModel.h */,
 				FC1D7A1812D8050000AA4AB1 /* GHCommitsTableModel.m */,
 			);
-			name = "Table Model";
+			name = Model;
 			sourceTree = "<group>";
 		};
 		FC1D78CE12D7FC9400AA4AB1 /* Categories */ = {
@@ -421,7 +428,7 @@
 			name = Categories;
 			sourceTree = "<group>";
 		};
-		FC1D78EC12D7FE0E00AA4AB1 /* Table Controller */ = {
+		FC1D78EC12D7FE0E00AA4AB1 /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
 				FC1D78ED12D7FE1A00AA4AB1 /* GHTableViewController.h */,
@@ -430,16 +437,19 @@
 				FC32581D12D6738E00EB47A3 /* GHReposTableViewController.m */,
 				FC1D7A2512D806B700AA4AB1 /* GHCommitsTableViewController.h */,
 				FC1D7A2612D806B700AA4AB1 /* GHCommitsTableViewController.m */,
+				FCC39D5812DAB4D100364773 /* GHCommitViewController.h */,
+				FCC39D5912DAB4D100364773 /* GHCommitViewController.m */,
+				FCC39D5A12DAB4D100364773 /* GHCommitViewController.xib */,
 			);
-			name = "Table Controller";
+			name = "View Controller";
 			sourceTree = "<group>";
 		};
 		FC3257F712D6738E00EB47A3 = {
 			isa = PBXGroup;
 			children = (
-				FC1D78CE12D7FC9400AA4AB1 /* Categories */,
-				FC05E02512D6E4DE002D9843 /* Github API */,
+				FC05E02512D6E4DE002D9843 /* GitHub API */,
 				FC3927F412D69FC500F5A82A /* LRTableModel */,
+				FC1D78CE12D7FC9400AA4AB1 /* Categories */,
 				FC3257FE12D6738E00EB47A3 /* Classes */,
 				FC3257FF12D6738E00EB47A3 /* Other Sources */,
 				FC32580012D6738E00EB47A3 /* Resources */,
@@ -454,8 +464,8 @@
 			children = (
 				FC32581612D6738E00EB47A3 /* AppDelegate.h */,
 				FC32581712D6738E00EB47A3 /* AppDelegate.m */,
-				FC1D78EC12D7FE0E00AA4AB1 /* Table Controller */,
-				FC1D782512D7F65100AA4AB1 /* Table Model */,
+				FC1D78EC12D7FE0E00AA4AB1 /* View Controller */,
+				FC1D782512D7F65100AA4AB1 /* Model */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -474,6 +484,7 @@
 			isa = PBXGroup;
 			children = (
 				FC39275912D67A2500F5A82A /* navigation_bar.png */,
+				FC1D7D4512D8460100AA4AB1 /* navigation_bar2.png */,
 				FC32580F12D6738E00EB47A3 /* Githood-Info.plist */,
 				FC32581112D6738E00EB47A3 /* InfoPlist.strings */,
 				FC32581912D6738E00EB47A3 /* MainWindow.xib */,
@@ -596,6 +607,8 @@
 				FC32581312D6738E00EB47A3 /* InfoPlist.strings in Resources */,
 				FC32581B12D6738E00EB47A3 /* MainWindow.xib in Resources */,
 				FC39275A12D67A2500F5A82A /* navigation_bar.png in Resources */,
+				FC1D7D4612D8460100AA4AB1 /* navigation_bar2.png in Resources */,
+				FCC39D5C12DAB4D100364773 /* GHCommitViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -677,6 +690,7 @@
 				FC1D78EF12D7FE1A00AA4AB1 /* GHTableViewController.m in Sources */,
 				FC1D7A1912D8050000AA4AB1 /* GHCommitsTableModel.m in Sources */,
 				FC1D7A2712D806B700AA4AB1 /* GHCommitsTableViewController.m in Sources */,
+				FCC39D5B12DAB4D100364773 /* GHCommitViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -714,6 +728,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -723,6 +738,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PREBINDING = NO;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
