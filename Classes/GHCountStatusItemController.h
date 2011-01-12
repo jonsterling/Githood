@@ -6,8 +6,8 @@
 @property (nonatomic,retain,readonly) IBOutlet UILabel *textLabel;
 @property (nonatomic,assign) id <GHCountStatusItemDataSource> dataSource;
 
-@property (nonatomic,copy) NSString *singularType;
-@property (nonatomic,copy) NSString *pluralType;
++ (id)withSingularType:(NSString *)singular pluralType:(NSString *)plural;
+- (id)initWithSingularType:(NSString *)singular pluralType:(NSString *)plural;
 
 @end
 

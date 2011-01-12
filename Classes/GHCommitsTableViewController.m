@@ -42,9 +42,8 @@
   self.tableModel.repository = self.repository;
   self.tableModel.delegate = self;
   
-  self.statusItem = [GHCountStatusItemController controller];
-  self.statusItem.singularType = @"commit";
-  self.statusItem.pluralType = @"commits";
+  self.statusItem = [GHCountStatusItemController withSingularType:@"commit"
+                                                       pluralType:@"commits"];
   
   self.statusItem.dataSource = self.tableModel;
   

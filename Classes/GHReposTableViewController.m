@@ -32,9 +32,8 @@
   self.tableModel.username = @"jonsterling";
   self.tableModel.delegate = self;
   
-  self.statusItem = [GHCountStatusItemController controller];
-  self.statusItem.singularType = @"repository";
-  self.statusItem.pluralType = @"repositories";
+  self.statusItem = [GHCountStatusItemController withSingularType:@"repository"
+                                                       pluralType:@"repositories"];
   self.statusItem.dataSource = self.tableModel;
   
   [self configureToolbar];

@@ -1,10 +1,27 @@
 #import "GHCountStatusItemController.h"
 
+@interface GHCountStatusItemController ()
+@property (nonatomic,readonly) NSString *singularType;
+@property (nonatomic,readonly) NSString *pluralType;
+@end
+
 @implementation GHCountStatusItemController
 @synthesize textLabel;
 @synthesize dataSource;
 @synthesize singularType;
 @synthesize pluralType;
+
++ (id)withSingularType:(NSString *)singular pluralType:(NSString *)plural {
+  return [[[self alloc] initWithSingularType:singular pluralType:plural] autorelease];
+}
+
+- (id)initWithSingularType:(NSString *)singular pluralType:(NSString *)plural {
+  self = [super init];
+  if (self != nil) {
+    singularType = [singular copy];
+    pluralType = [plural copy];
+  } return self;
+}
 
 - (void)viewDidLoad {
   [super viewDidLoad];
