@@ -79,6 +79,7 @@
 		FC7F764412DE3A7900BD23BB /* GHSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7F764312DE3A7900BD23BB /* GHSettingsViewController.m */; };
 		FC7F764D12DE462E00BD23BB /* GHStyler.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7F764C12DE462E00BD23BB /* GHStyler.m */; };
 		FC7F765C12DE4A5900BD23BB /* GHGroupedTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7F765B12DE4A5900BD23BB /* GHGroupedTableView.m */; };
+		FC7F765E12DE5BCA00BD23BB /* 262@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FC7F765D12DE5BCA00BD23BB /* 262@2x.png */; };
 		FC8B40BA12DD338600197CBD /* GHHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8B40B912DD338600197CBD /* GHHeaderView.m */; };
 		FCC39D5B12DAB4D100364773 /* GHChangesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC39D5912DAB4D100364773 /* GHChangesTableViewController.m */; };
 		FCC8A9E312DBC3FF0027A6D1 /* GHChangesTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC8A9E212DBC3FF0027A6D1 /* GHChangesTableModel.m */; };
@@ -241,6 +242,7 @@
 		FC7F764C12DE462E00BD23BB /* GHStyler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHStyler.m; sourceTree = "<group>"; };
 		FC7F765A12DE4A5900BD23BB /* GHGroupedTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHGroupedTableView.h; sourceTree = "<group>"; };
 		FC7F765B12DE4A5900BD23BB /* GHGroupedTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHGroupedTableView.m; sourceTree = "<group>"; };
+		FC7F765D12DE5BCA00BD23BB /* 262@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "262@2x.png"; sourceTree = "<group>"; };
 		FC8B40B812DD338600197CBD /* GHHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHHeaderView.h; sourceTree = "<group>"; };
 		FC8B40B912DD338600197CBD /* GHHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHHeaderView.m; sourceTree = "<group>"; };
 		FCC39D5812DAB4D100364773 /* GHChangesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHChangesTableViewController.h; sourceTree = "<group>"; };
@@ -526,6 +528,7 @@
 			isa = PBXGroup;
 			children = (
 				FC7F764012DE382A00BD23BB /* 262.png */,
+				FC7F765D12DE5BCA00BD23BB /* 262@2x.png */,
 				FC7F763B12DE320B00BD23BB /* 261.png */,
 				FC39275912D67A2500F5A82A /* navigation_bar.png */,
 				FC1D7D4512D8460100AA4AB1 /* navigation_bar2.png */,
@@ -711,6 +714,7 @@
 				FC40114712DD837B0050B3E1 /* GHChangesStatusItemController.xib in Resources */,
 				FC7F763C12DE320B00BD23BB /* 261.png in Resources */,
 				FC7F764112DE382A00BD23BB /* 262.png in Resources */,
+				FC7F765E12DE5BCA00BD23BB /* 262@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
