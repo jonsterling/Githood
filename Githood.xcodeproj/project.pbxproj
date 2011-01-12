@@ -73,7 +73,8 @@
 		FC40113D12DD78700050B3E1 /* GHRefreshBarButtonController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC40113C12DD78700050B3E1 /* GHRefreshBarButtonController.m */; };
 		FC40114212DD81B10050B3E1 /* GHChangesStatusItemController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC40114012DD81B10050B3E1 /* GHChangesStatusItemController.m */; };
 		FC40114712DD837B0050B3E1 /* GHChangesStatusItemController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC40114612DD837B0050B3E1 /* GHChangesStatusItemController.xib */; };
-		FC4BFFF012DB9385009575D7 /* NSObject+ReleaseProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FC4BFFEF12DB9385009575D7 /* NSObject+ReleaseProperties.m */; };
+		FC7F763C12DE320B00BD23BB /* 261.png in Resources */ = {isa = PBXBuildFile; fileRef = FC7F763B12DE320B00BD23BB /* 261.png */; };
+		FC7F763F12DE323500BD23BB /* UIBarButtonItem+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7F763E12DE323500BD23BB /* UIBarButtonItem+Custom.m */; };
 		FC8B40BA12DD338600197CBD /* GHHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8B40B912DD338600197CBD /* GHHeaderView.m */; };
 		FCC39D5B12DAB4D100364773 /* GHChangesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC39D5912DAB4D100364773 /* GHChangesTableViewController.m */; };
 		FCC8A9E312DBC3FF0027A6D1 /* GHChangesTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC8A9E212DBC3FF0027A6D1 /* GHChangesTableModel.m */; };
@@ -226,8 +227,6 @@
 		FC40113F12DD81B10050B3E1 /* GHChangesStatusItemController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHChangesStatusItemController.h; sourceTree = "<group>"; };
 		FC40114012DD81B10050B3E1 /* GHChangesStatusItemController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHChangesStatusItemController.m; sourceTree = "<group>"; };
 		FC40114612DD837B0050B3E1 /* GHChangesStatusItemController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GHChangesStatusItemController.xib; sourceTree = "<group>"; };
-		FC4BFFEE12DB9385009575D7 /* NSObject+ReleaseProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+ReleaseProperties.h"; path = "Classes/NSObject+ReleaseProperties.h"; sourceTree = "<group>"; };
-		FC4BFFEF12DB9385009575D7 /* NSObject+ReleaseProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+ReleaseProperties.m"; path = "Classes/NSObject+ReleaseProperties.m"; sourceTree = "<group>"; };
 		FC8B40B812DD338600197CBD /* GHHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHHeaderView.h; sourceTree = "<group>"; };
 		FC8B40B912DD338600197CBD /* GHHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHHeaderView.m; sourceTree = "<group>"; };
 		FCC39D5812DAB4D100364773 /* GHChangesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHChangesTableViewController.h; sourceTree = "<group>"; };
@@ -447,8 +446,6 @@
 		FC1D78CE12D7FC9400AA4AB1 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				FC4BFFEE12DB9385009575D7 /* NSObject+ReleaseProperties.h */,
-				FC4BFFEF12DB9385009575D7 /* NSObject+ReleaseProperties.m */,
 				FC1D78CF12D7FCC000AA4AB1 /* UITableViewCell+Extension.h */,
 				FC1D78D012D7FCC000AA4AB1 /* UITableViewCell+Extension.m */,
 			);

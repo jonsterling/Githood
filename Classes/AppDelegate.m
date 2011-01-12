@@ -16,7 +16,8 @@
 }
 
 - (void)dealloc {
-  [self releaseProperties];
+  [window release];
+  [navigationController release];
   [super dealloc];
 }
 

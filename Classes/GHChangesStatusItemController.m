@@ -21,7 +21,7 @@
 }
 
 - (void)dealloc {
-  [self releaseProperties];
+  [textLabel release];
   [super dealloc];
 }
 

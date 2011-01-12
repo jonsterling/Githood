@@ -88,7 +88,8 @@ static CGFloat kOffset = 10.0;
 }
 
 - (void)dealloc {
-  [super releaseProperties];
+  [text release];
+  [label release];
   [super dealloc];
 }
 

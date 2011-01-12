@@ -12,7 +12,7 @@
 @dynamic sortedCommits;
 
 - (void)dealloc {
-  [self releaseProperties];
+  [repository release];
   [super dealloc];
 }
 

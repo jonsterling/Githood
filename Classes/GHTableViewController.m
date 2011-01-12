@@ -20,7 +20,8 @@
 }
 
 - (void)dealloc {
-  [self releaseProperties];
+  [tableModel release];
+  [refreshItem release];
   [super dealloc];
 }
 

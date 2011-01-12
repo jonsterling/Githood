@@ -54,7 +54,8 @@
 }
 
 - (void)dealloc {
-  [self releaseProperties];
+  [repository release];
+  [statusItem release];
   [super dealloc];
 }
 

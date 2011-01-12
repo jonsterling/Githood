@@ -22,7 +22,9 @@
 @synthesize statusItem;
 
 - (void)dealloc {
-  [self releaseProperties];
+  [commit release];
+  [repository release];
+  [statusItem release];
   [super dealloc];
 }
 

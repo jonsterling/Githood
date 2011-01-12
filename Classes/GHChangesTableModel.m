@@ -14,7 +14,8 @@
 @synthesize mutableObjects;
 
 - (void)dealloc {
-  [self releaseProperties];
+  [commit release];
+  [repository release];
   [super dealloc];
 }
 

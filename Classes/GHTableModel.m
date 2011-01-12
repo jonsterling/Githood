@@ -24,7 +24,7 @@
 }
 
 - (void)dealloc {
-  [self releaseProperties];
+  [sections release];
   [super dealloc];
 }
 

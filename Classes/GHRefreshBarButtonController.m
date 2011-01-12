@@ -80,7 +80,9 @@
 }
 
 - (void)dealloc {
-  [self releaseProperties];
+  [refreshItem release];
+  [loadingItem release];
+  [buttonTarget release];
   [super dealloc];
 }
 
