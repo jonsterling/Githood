@@ -62,7 +62,6 @@
   self.tableModel.commit = self.commit;
   self.tableModel.repository = self.repository;
   
-  self.tableView.backgroundView = [[UIView new] autorelease];
   self.tableView.rowHeight = 44.0f;
   
   id headerView = [GHHeaderView withText:self.commit.message];

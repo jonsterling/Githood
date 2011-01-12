@@ -16,8 +16,15 @@
   self = [super init];
   if (self != nil) {
     headerView = [aHeaderView retain];
+    
+    if (tableView.backgroundView == nil) {
+      tableView.backgroundView = [[UIView new] autorelease];
+    }
+    
     tableView.tableHeaderView = headerView;
-  } return self;
+  }
+  
+  return self;
 }
 
 - (void)dealloc {
