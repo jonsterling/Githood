@@ -13,7 +13,6 @@
 @interface GHChangesTableViewController ()
 @property (nonatomic,retain) GHChangesStatusItemController *statusItem;
 @property (nonatomic,retain) GHDockingTableHeaderViewController *headerController;
-@property (nonatomic,assign) BOOL headerIsDocked;
 @end
 
 @interface GHChangesTableViewController (TypeSpecification)
@@ -25,7 +24,6 @@
 @synthesize repository;
 @synthesize statusItem;
 @synthesize headerController;
-@synthesize headerIsDocked;
 
 - (void)dealloc {
   [commit release];
