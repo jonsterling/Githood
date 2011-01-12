@@ -76,7 +76,7 @@
 
 - (void)configureCell:(UITableViewCell *)cell forObject:(id)object atIndexPath:(NSIndexPath *)path {
   cell.textLabel.text = object;
-  cell.textLabel.font = [UIFont boldSystemFontOfSize:(1.2*[UIFont systemFontSize])];
+  cell.textLabel.font = [UIFont boldSystemFontOfSize:[UIFont systemFontSize]];
   cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 }
 
