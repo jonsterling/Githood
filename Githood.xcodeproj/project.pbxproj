@@ -68,8 +68,8 @@
 		FC3927FD12D69FC500F5A82A /* LRAbstractTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3927FB12D69FC500F5A82A /* LRAbstractTableModel.m */; };
 		FC39281112D6A0CB00F5A82A /* GHTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FC39281012D6A0CB00F5A82A /* GHTableModel.m */; };
 		FC4BFFF012DB9385009575D7 /* NSObject+ReleaseProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FC4BFFEF12DB9385009575D7 /* NSObject+ReleaseProperties.m */; };
-		FCC39D5B12DAB4D100364773 /* GHCommitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC39D5912DAB4D100364773 /* GHCommitViewController.m */; };
-		FCC39D5C12DAB4D100364773 /* GHCommitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCC39D5A12DAB4D100364773 /* GHCommitViewController.xib */; };
+		FCC39D5B12DAB4D100364773 /* GHChangesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC39D5912DAB4D100364773 /* GHChangesTableViewController.m */; };
+		FCC8A9E312DBC3FF0027A6D1 /* GHChangesTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC8A9E212DBC3FF0027A6D1 /* GHChangesTableModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -211,9 +211,10 @@
 		FC39281012D6A0CB00F5A82A /* GHTableModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHTableModel.m; sourceTree = "<group>"; };
 		FC4BFFEE12DB9385009575D7 /* NSObject+ReleaseProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+ReleaseProperties.h"; path = "Classes/NSObject+ReleaseProperties.h"; sourceTree = "<group>"; };
 		FC4BFFEF12DB9385009575D7 /* NSObject+ReleaseProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+ReleaseProperties.m"; path = "Classes/NSObject+ReleaseProperties.m"; sourceTree = "<group>"; };
-		FCC39D5812DAB4D100364773 /* GHCommitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHCommitViewController.h; sourceTree = "<group>"; };
-		FCC39D5912DAB4D100364773 /* GHCommitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHCommitViewController.m; sourceTree = "<group>"; };
-		FCC39D5A12DAB4D100364773 /* GHCommitViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GHCommitViewController.xib; sourceTree = "<group>"; };
+		FCC39D5812DAB4D100364773 /* GHChangesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHChangesTableViewController.h; sourceTree = "<group>"; };
+		FCC39D5912DAB4D100364773 /* GHChangesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHChangesTableViewController.m; sourceTree = "<group>"; };
+		FCC8A9E112DBC3FF0027A6D1 /* GHChangesTableModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHChangesTableModel.h; sourceTree = "<group>"; };
+		FCC8A9E212DBC3FF0027A6D1 /* GHChangesTableModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHChangesTableModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -418,6 +419,8 @@
 				FC1D782712D7F65F00AA4AB1 /* GHReposTableModel.m */,
 				FC1D7A1712D8050000AA4AB1 /* GHCommitsTableModel.h */,
 				FC1D7A1812D8050000AA4AB1 /* GHCommitsTableModel.m */,
+				FCC8A9E112DBC3FF0027A6D1 /* GHChangesTableModel.h */,
+				FCC8A9E212DBC3FF0027A6D1 /* GHChangesTableModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -442,9 +445,8 @@
 				FC32581D12D6738E00EB47A3 /* GHReposTableViewController.m */,
 				FC1D7A2512D806B700AA4AB1 /* GHCommitsTableViewController.h */,
 				FC1D7A2612D806B700AA4AB1 /* GHCommitsTableViewController.m */,
-				FCC39D5812DAB4D100364773 /* GHCommitViewController.h */,
-				FCC39D5912DAB4D100364773 /* GHCommitViewController.m */,
-				FCC39D5A12DAB4D100364773 /* GHCommitViewController.xib */,
+				FCC39D5812DAB4D100364773 /* GHChangesTableViewController.h */,
+				FCC39D5912DAB4D100364773 /* GHChangesTableViewController.m */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -613,7 +615,6 @@
 				FC32581B12D6738E00EB47A3 /* MainWindow.xib in Resources */,
 				FC39275A12D67A2500F5A82A /* navigation_bar.png in Resources */,
 				FC1D7D4612D8460100AA4AB1 /* navigation_bar2.png in Resources */,
-				FCC39D5C12DAB4D100364773 /* GHCommitViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -695,8 +696,9 @@
 				FC1D78EF12D7FE1A00AA4AB1 /* GHTableViewController.m in Sources */,
 				FC1D7A1912D8050000AA4AB1 /* GHCommitsTableModel.m in Sources */,
 				FC1D7A2712D806B700AA4AB1 /* GHCommitsTableViewController.m in Sources */,
-				FCC39D5B12DAB4D100364773 /* GHCommitViewController.m in Sources */,
+				FCC39D5B12DAB4D100364773 /* GHChangesTableViewController.m in Sources */,
 				FC4BFFF012DB9385009575D7 /* NSObject+ReleaseProperties.m in Sources */,
+				FCC8A9E312DBC3FF0027A6D1 /* GHChangesTableModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -758,9 +760,10 @@
 		FC32583512D6738E00EB47A3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
@@ -794,6 +797,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Githood-Prefix.pch";
 				INFOPLIST_FILE = "Githood-Info.plist";
+				OTHER_CFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -807,6 +811,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Githood-Prefix.pch";
 				INFOPLIST_FILE = "Githood-Info.plist";
+				OTHER_CFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
