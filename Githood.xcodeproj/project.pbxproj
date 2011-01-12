@@ -77,6 +77,7 @@
 		FC7F763F12DE323500BD23BB /* UIBarButtonItem+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7F763E12DE323500BD23BB /* UIBarButtonItem+Custom.m */; };
 		FC7F764112DE382A00BD23BB /* 262.png in Resources */ = {isa = PBXBuildFile; fileRef = FC7F764012DE382A00BD23BB /* 262.png */; };
 		FC7F764412DE3A7900BD23BB /* GHSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7F764312DE3A7900BD23BB /* GHSettingsViewController.m */; };
+		FC7F764D12DE462E00BD23BB /* GHStyler.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7F764C12DE462E00BD23BB /* GHStyler.m */; };
 		FC8B40BA12DD338600197CBD /* GHHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8B40B912DD338600197CBD /* GHHeaderView.m */; };
 		FCC39D5B12DAB4D100364773 /* GHChangesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC39D5912DAB4D100364773 /* GHChangesTableViewController.m */; };
 		FCC8A9E312DBC3FF0027A6D1 /* GHChangesTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC8A9E212DBC3FF0027A6D1 /* GHChangesTableModel.m */; };
@@ -235,6 +236,8 @@
 		FC7F764012DE382A00BD23BB /* 262.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 262.png; sourceTree = "<group>"; };
 		FC7F764212DE3A7900BD23BB /* GHSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHSettingsViewController.h; sourceTree = "<group>"; };
 		FC7F764312DE3A7900BD23BB /* GHSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHSettingsViewController.m; sourceTree = "<group>"; };
+		FC7F764B12DE462E00BD23BB /* GHStyler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHStyler.h; sourceTree = "<group>"; };
+		FC7F764C12DE462E00BD23BB /* GHStyler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHStyler.m; sourceTree = "<group>"; };
 		FC8B40B812DD338600197CBD /* GHHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHHeaderView.h; sourceTree = "<group>"; };
 		FC8B40B912DD338600197CBD /* GHHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHHeaderView.m; sourceTree = "<group>"; };
 		FCC39D5812DAB4D100364773 /* GHChangesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHChangesTableViewController.h; sourceTree = "<group>"; };
@@ -501,6 +504,7 @@
 				FC8B40B712DD334E00197CBD /* View */,
 				FC1D78EC12D7FE0E00AA4AB1 /* View Controller */,
 				FC1D782512D7F65100AA4AB1 /* Model */,
+				FC7F764A12DE461900BD23BB /* Helper */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -607,6 +611,15 @@
 				FC7F764312DE3A7900BD23BB /* GHSettingsViewController.m */,
 			);
 			name = Settings;
+			sourceTree = "<group>";
+		};
+		FC7F764A12DE461900BD23BB /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				FC7F764B12DE462E00BD23BB /* GHStyler.h */,
+				FC7F764C12DE462E00BD23BB /* GHStyler.m */,
+			);
+			name = Helper;
 			sourceTree = "<group>";
 		};
 		FC8B40B712DD334E00197CBD /* View */ = {
@@ -783,6 +796,7 @@
 				FC40114212DD81B10050B3E1 /* GHChangesStatusItemController.m in Sources */,
 				FC7F763F12DE323500BD23BB /* UIBarButtonItem+Custom.m in Sources */,
 				FC7F764412DE3A7900BD23BB /* GHSettingsViewController.m in Sources */,
+				FC7F764D12DE462E00BD23BB /* GHStyler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

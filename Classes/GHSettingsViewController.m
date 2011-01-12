@@ -1,5 +1,10 @@
 #import "GHSettingsViewController.h"
 #import "UIBarButtonItem+Custom.h"
+#import "GHStyler.h"
+
+@interface GHSettingsViewController ()
+- (void)close;
+@end
 
 @implementation GHSettingsViewController
 
@@ -11,10 +16,22 @@
   [super dealloc];
 }
 
-- (void)viewdidLoad {
-  [super viewDidLoad];
+- (void)viewWillAppear:(BOOL)animated {
+  [super viewWillAppear:animated];
+  
+  self.title = @"Settings";
+  
+  [GHStyler styleNavigationBar:self.navigationController.navigationBar];
+  
+  UIBarButtonItem *doneItem = [UIBarButtonItem withSystemItem:UIBarButtonSystemItemDone 
+                                                       target:self
+                                                       action:@selector(close)];
+  self.navigationItem.leftBarButtonItem = doneItem;
 }
 
+- (void)close {
+  [self dismissModalViewControllerAnimated:YES];
+}
 
 #pragma mark -
 #pragma mark UITableViewDataSource

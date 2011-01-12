@@ -3,10 +3,10 @@
 #import "GHTableModel.h"
 #import "GHRefreshBarButtonController.h"
 #import "UIBarButtonItem+Custom.h"
+#import "GHStyler.h"
 
 @interface GHTableViewController ()
 @property (nonatomic,retain,readwrite) GHRefreshBarButtonController *refreshItem;
-- (void)configureBars;
 @end
 
 @implementation GHTableViewController
@@ -35,7 +35,11 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   
-  [self configureBars];
+  [GHStyler styleNavigationController:self.navigationController];
+  
+  self.refreshItem = [GHRefreshBarButtonController withTarget:self
+                                                       action:@selector(refreshData) 
+                                                     delegate:self];
   
   self.tableView.rowHeight = 65;
   self.tableView.dataSource = self.tableModel;
@@ -51,21 +55,6 @@
                                               action:nil];
   id buttons = [NSArray arrayWithObjects:flexibleSpace,item,flexibleSpace,nil];
   [self setToolbarItems:buttons animated:YES];
-}
-
-- (void)configureBars {
-  UIToolbar *tb = self.navigationController.toolbar;
-  UINavigationBar *nb = self.navigationController.navigationBar;
-  
-  nb.barStyle = UIBarStyleBlack;
-  nb.layer.contents = (id)[UIImage imageNamed:@"navigation_bar"].CGImage;  
-  
-  tb.barStyle = UIBarStyleBlack;
-  tb.tintColor = [UIColor colorWithWhite:0.8 alpha:1.0];
-  
-  self.refreshItem = [GHRefreshBarButtonController withTarget:self
-                                                       action:@selector(refreshData) 
-                                                     delegate:self];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
