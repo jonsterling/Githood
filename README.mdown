@@ -1,0 +1,21 @@
+Mission:
+--------
+Most apps for GitHub are so fucking ugly. This is why I've started Githood,
+because I want something that I'd like to use. I don't plan on adding lots of
+features; I just want this to follow changes on my watched repositories.
+
+
+Licence:
+--------
+
+It's really simple: only I (Jonathan Sterling) can sell this app on the App
+Store. You're free to download it from here and install it on your devices or
+whatever, I don't care!
+
+If you are feeling magnanimous and want to fork it, that's really cool. When
+you've done something need, send me a pull request so that I can merge it in!
+Just know that anything that gets merged in will be included in updates to the
+App Store app (contributors will be credited).
+
+I hope that all that seems fair to anyone looking here. I've got to make a
+living, but I think that commercial open-source is the way to go.
