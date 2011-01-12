@@ -1,14 +1,6 @@
-//
-//  Custom.h
-//  Githood
-//
-//  Created by Jon on 1/12/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
-//
-
-#import <Foundation/Foundation.h>
-
-
 @interface UIBarButtonItem (Custom)
-
++ (id)withImage:(UIImage *)image style:(UIBarButtonItemStyle)style target:(id)target action:(SEL)action;
++ (id)withTitle:(NSString *)title style:(UIBarButtonItemStyle)style target:(id)target action:(SEL)action;
++ (id)withSystemItem:(UIBarButtonSystemItem)systemItem target:(id)target action:(SEL)action;
++ (id)withCustomView:(UIView *)customView;
 @end

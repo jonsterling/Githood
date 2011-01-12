@@ -7,7 +7,7 @@
 }
 
 - (UIBarButtonItem *)buttonItem {
-  return [[[UIBarButtonItem alloc] initWithCustomView:self.view] autorelease];
+  return [UIBarButtonItem withCustomView:self.view];
 }
 
 - (void)refreshLabel {

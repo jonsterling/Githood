@@ -227,6 +227,8 @@
 		FC40113F12DD81B10050B3E1 /* GHChangesStatusItemController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHChangesStatusItemController.h; sourceTree = "<group>"; };
 		FC40114012DD81B10050B3E1 /* GHChangesStatusItemController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHChangesStatusItemController.m; sourceTree = "<group>"; };
 		FC40114612DD837B0050B3E1 /* GHChangesStatusItemController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GHChangesStatusItemController.xib; sourceTree = "<group>"; };
+		FC7F763D12DE323500BD23BB /* UIBarButtonItem+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIBarButtonItem+Custom.h"; path = "Classes/UIBarButtonItem+Custom.h"; sourceTree = "<group>"; };
+		FC7F763E12DE323500BD23BB /* UIBarButtonItem+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIBarButtonItem+Custom.m"; path = "Classes/UIBarButtonItem+Custom.m"; sourceTree = "<group>"; };
 		FC8B40B812DD338600197CBD /* GHHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHHeaderView.h; sourceTree = "<group>"; };
 		FC8B40B912DD338600197CBD /* GHHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHHeaderView.m; sourceTree = "<group>"; };
 		FCC39D5812DAB4D100364773 /* GHChangesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHChangesTableViewController.h; sourceTree = "<group>"; };
@@ -448,6 +450,8 @@
 			children = (
 				FC1D78CF12D7FCC000AA4AB1 /* UITableViewCell+Extension.h */,
 				FC1D78D012D7FCC000AA4AB1 /* UITableViewCell+Extension.m */,
+				FC7F763D12DE323500BD23BB /* UIBarButtonItem+Custom.h */,
+				FC7F763E12DE323500BD23BB /* UIBarButtonItem+Custom.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -751,13 +755,13 @@
 				FC1D7A1912D8050000AA4AB1 /* GHCommitsTableModel.m in Sources */,
 				FC1D7A2712D806B700AA4AB1 /* GHCommitsTableViewController.m in Sources */,
 				FCC39D5B12DAB4D100364773 /* GHChangesTableViewController.m in Sources */,
-				FC4BFFF012DB9385009575D7 /* NSObject+ReleaseProperties.m in Sources */,
 				FCC8A9E312DBC3FF0027A6D1 /* GHChangesTableModel.m in Sources */,
 				FC8B40BA12DD338600197CBD /* GHHeaderView.m in Sources */,
 				FC40113012DD623C0050B3E1 /* GHStatusBarButtonController.m in Sources */,
 				FC40113A12DD671D0050B3E1 /* GHCountStatusItemController.m in Sources */,
 				FC40113D12DD78700050B3E1 /* GHRefreshBarButtonController.m in Sources */,
 				FC40114212DD81B10050B3E1 /* GHChangesStatusItemController.m in Sources */,
+				FC7F763F12DE323500BD23BB /* UIBarButtonItem+Custom.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

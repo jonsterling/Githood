@@ -1,14 +1,21 @@
-//
-//  Custom.m
-//  Githood
-//
-//  Created by Jon on 1/12/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
-//
-
-#import "Custom.h"
-
+#import "UIBarButtonItem+Custom.h"
 
 @implementation UIBarButtonItem (Custom)
+
++ (id)withImage:(UIImage *)image style:(UIBarButtonItemStyle)style target:(id)target action:(SEL)action {
+  return [[[self alloc] initWithImage:image style:style target:target action:action] autorelease];
+}
+
++ (id)withTitle:(NSString *)title style:(UIBarButtonItemStyle)style target:(id)target action:(SEL)action {
+  return [[[self alloc] initWithTitle:title style:style target:target action:action] autorelease];
+}
+
++ (id)withSystemItem:(UIBarButtonSystemItem)systemItem target:(id)target action:(SEL)action {
+  return [[[self alloc] initWithBarButtonSystemItem:systemItem target:target action:action] autorelease];
+}
+
++ (id)withCustomView:(UIView *)customView {
+  return [[[self alloc] initWithCustomView:customView] autorelease];
+}
 
 @end

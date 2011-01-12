@@ -45,11 +45,10 @@
 }
 
 - (void)setSoleToolbarItem:(UIBarButtonItem *)item {
-  id flexibleSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
-                                                                   target:nil 
-                                                                   action:nil];
+  id flexibleSpace = [UIBarButtonItem withSystemItem:UIBarButtonSystemItemFlexibleSpace
+                                              target:nil
+                                              action:nil];
   self.toolbarItems = [NSArray arrayWithObjects:flexibleSpace,item,flexibleSpace,nil];
-  [flexibleSpace release];
 }
 
 - (void)configureBars {
