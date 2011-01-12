@@ -45,13 +45,14 @@
   
   [flexibleSpace release];
   
-  [self.tableModel refreshData];
+  [self refreshData];
 }
 
 #pragma mark -
 #pragma mark GHTableModelDelegate
 
 - (void)dataDidChange {
+  [super dataDidChange];
   [self.statusItem refreshLabel];
 }
 

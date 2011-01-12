@@ -55,7 +55,7 @@
   self.tableView.tableHeaderView = headerView;
   self.tableView.backgroundColor = [UIColor colorWithWhite:0.98 alpha:1.0];
   
-  [self.tableModel refreshData];
+  [self refreshData];
 }
 
 - (void)configureCell:(UITableViewCell *)cell forObject:(id)object atIndexPath:(NSIndexPath *)path {

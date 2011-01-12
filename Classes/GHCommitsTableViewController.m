@@ -60,7 +60,7 @@
   
   [flexibleSpace release];
   
-  [self.tableModel refreshData];
+  [self refreshData];
 }
 
 - (void)dealloc {
@@ -72,6 +72,7 @@
 #pragma mark GHTableModelDelegate
 
 - (void)dataDidChange {
+  [super dataDidChange];
   [self.statusItem refreshLabel];
 }
 

@@ -1,11 +1,15 @@
 #import "LRAbstractTableModel.h"
 #import "GitHubServiceDelegate.h"
 
+@protocol GHTableModelDelegate;
+
 @protocol GHConcreteTableModel <LRTableModel,UITableViewDataSource>
 - (void)refreshData;
+
+@optional
+@property (nonatomic,assign) id <GHTableModelDelegate> delegate;
 @end
 
-@protocol GHTableModelDelegate;
 @interface GHTableModel : LRAbstractTableModel <GitHubServiceDelegate>
 @property (nonatomic,assign) id <GHTableModelDelegate> delegate;
 

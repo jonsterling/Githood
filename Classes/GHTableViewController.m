@@ -1,13 +1,16 @@
 #import <QuartzCore/QuartzCore.h>
 #import "GHTableViewController.h"
 #import "GHTableModel.h"
+#import "GHRefreshBarButtonController.h"
 
 @interface GHTableViewController ()
+@property (nonatomic,retain,readwrite) GHRefreshBarButtonController *refreshItem;
 - (void)configureBars;
 @end
 
 @implementation GHTableViewController
 @synthesize tableModel;
+@synthesize refreshItem;
 
 + (void)initialize {
   if (self != [GHTableViewController class]) {
@@ -24,9 +27,7 @@
 - (id <GHConcreteTableModel>)tableModel {
   if (tableModel == nil) {
     tableModel = [[[[self class] modelClass] alloc] initWithCellProvider:self];
-  }
-  
-  return tableModel;
+  } return tableModel;
 }
 
 - (void)viewDidLoad {
@@ -37,6 +38,7 @@
   self.tableView.rowHeight = 65;
   self.tableView.dataSource = self.tableModel;
   self.tableView.delegate = self;
+  self.tableModel.delegate = self;
   
   [self.tableModel addTableModelListener:self];
 }
@@ -51,16 +53,33 @@
   tb.barStyle = UIBarStyleBlack;
   tb.tintColor = [UIColor colorWithWhite:0.8 alpha:1.0];
   
-  id refreshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
-                                                                   target:self.tableModel
-                                                                   action:@selector(refreshData)];
-  self.navigationItem.rightBarButtonItem = refreshButton;
-  [refreshButton release];  
+  self.refreshItem = [GHRefreshBarButtonController withTarget:self
+                                                       action:@selector(refreshData) 
+                                                     delegate:self];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
   [self.navigationController setToolbarHidden:NO animated:YES];
+}
+
+- (void)refreshData {
+  [self.tableModel refreshData];
+  self.refreshItem.state = GHLoadingInProgressState;
+}
+
+#pragma mark -
+#pragma mark GHRefreshBarButtonDelegate
+
+- (void)placeRefreshButton:(UIBarButtonItem *)refreshButton {
+  [self.navigationItem setRightBarButtonItem:refreshButton animated:YES];
+}
+
+#pragma mark -
+#pragma mark GHTableModelDelegate 
+
+- (void)dataDidChange {
+  self.refreshItem.state = GHLoadingCompleteState;
 }
 
 #pragma mark -
