@@ -8,6 +8,8 @@
 @end
 
 @implementation GHCommitsTableModel
+@synthesize repository;
+@dynamic sortedCommits;
 
 - (void)dealloc {
   [self releaseProperties];
@@ -15,7 +17,7 @@
 }
 
 - (void)refreshData {
-  [self setObjects:[NSArray array]];
+  [self removeAllObjects];
   
   [GitHubCommitServiceFactory requestCommitsOnBranch:@"master" 
                                           repository:self.repository.name 
@@ -24,7 +26,7 @@
 }
 
 - (NSArray *)sortedCommits {
-  return [self.objects sortedArrayUsingComparator:^(id <GitHubCommit> a, id <GitHubCommit> b) {
+  return [[self objectsForSection:0] sortedArrayUsingComparator:^(id <GitHubCommit> a, id <GitHubCommit> b) {
     return [b.committedDate compare:a.committedDate];
   }];
 }
@@ -36,7 +38,7 @@
 
 
 - (void)gitHubService:(id <GitHubService>)service gotCommit:(id <GitHubCommit>)commit {
-  [self addObject:commit];
+  [self addObject:commit toSection:0];
 }
 
 
