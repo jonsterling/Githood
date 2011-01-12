@@ -19,11 +19,10 @@
 	if (self.opaque) {
 		CGContextRef context = UIGraphicsGetCurrentContext();
     
-		CGContextDrawLinearGradient(context,
-                                [GHStyler gradient],
-                                self.bounds.origin,
-                                (CGPoint){CGRectGetMaxX(self.bounds),CGRectGetMaxY(self.bounds)},
-                                0);
+    CGPoint start = self.bounds.origin;
+    CGPoint end = CGPointMake(CGRectGetMaxX(self.bounds),
+                              CGRectGetMaxY(self.bounds));
+    CGContextDrawLinearGradient(context,[GHStyler gradient],start,end,0);
 	}
 }
 
