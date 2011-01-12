@@ -7,6 +7,7 @@
 @end
 
 @implementation GHTableViewController
+@synthesize tableModel;
 
 + (void)initialize {
   if (self != [GHTableViewController class]) {
@@ -37,7 +38,7 @@
   self.tableView.dataSource = self.tableModel;
   self.tableView.delegate = self;
   
-  [self.tableModel addTableModelListener:self];  
+  [self.tableModel addTableModelListener:self];
 }
 
 - (void)configureBars {
@@ -71,13 +72,20 @@
       [self.tableView reloadData];
       break;
     case LRTableModelInsertRowEvent:
-      [self.tableView insertRowsAtIndexPaths:changeEvent.indexPaths withRowAnimation:UITableViewRowAnimationTop];
-      [self.tableView reloadData];
+      [self.tableView insertRowsAtIndexPaths:changeEvent.indexPaths 
+                            withRowAnimation:UITableViewRowAnimationTop];
+      [self.tableView reloadRowsAtIndexPaths:self.tableView.indexPathsForVisibleRows 
+                            withRowAnimation:UITableViewRowAnimationNone];
+      break;
+    case LRTableModelInsertSectionEvent:
+      [self.tableView insertSections:[NSIndexSet indexSetWithIndex:changeEvent.indexPath.section] 
+                    withRowAnimation:UITableViewRowAnimationTop];
       break;
     default:
       [self.tableView reloadData];
       break;
   }
+  
 }
 
 
