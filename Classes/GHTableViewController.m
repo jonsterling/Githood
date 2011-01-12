@@ -48,7 +48,8 @@
   id flexibleSpace = [UIBarButtonItem withSystemItem:UIBarButtonSystemItemFlexibleSpace
                                               target:nil
                                               action:nil];
-  self.toolbarItems = [NSArray arrayWithObjects:flexibleSpace,item,flexibleSpace,nil];
+  id buttons = [NSArray arrayWithObjects:flexibleSpace,item,flexibleSpace,nil];
+  [self setToolbarItems:buttons animated:YES];
 }
 
 - (void)configureBars {

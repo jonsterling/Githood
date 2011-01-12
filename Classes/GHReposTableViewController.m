@@ -3,9 +3,12 @@
 #import "GitHubRepository.h"
 #import "GHCommitsTableViewController.h"
 #import "GHCountStatusItemController.h"
+#import "GHSettingsViewController.h"
 
 @interface GHReposTableViewController () <GHTableModelDelegate>
 @property (nonatomic,retain) GHCountStatusItemController *statusItem;
+- (void)showSettings;
+- (void)configureToolbar;
 @end
 
 @interface GHReposTableViewController (TypeSpecification)
@@ -33,9 +36,42 @@
   self.statusItem.pluralType = @"repositories";
   self.statusItem.dataSource = self.tableModel;
   
-  [self setSoleToolbarItem:self.statusItem.buttonItem];
+  [self configureToolbar];
   
   [self refreshData];
+}
+
+- (void)configureToolbar {
+  id settings = [UIBarButtonItem settingsItemWithStyle:UIBarButtonItemStylePlain
+                                                target:self
+                                                action:@selector(showSettings)];
+  
+  id flexible = [UIBarButtonItem withSystemItem:UIBarButtonSystemItemFlexibleSpace
+                                         target:nil
+                                         action:nil];
+  id fixed = [UIBarButtonItem withSystemItem:UIBarButtonSystemItemFixedSpace
+                                      target:nil
+                                      action:nil];
+  
+  // Since the settings icon is 24.0px wide, so must the fixed item, so as to
+  // center the status item
+  [fixed setWidth:24.0];
+  
+  id statusButtonItem = self.statusItem.buttonItem;
+  id buttons = [NSArray arrayWithObjects:
+                settings,flexible,
+                statusButtonItem,
+                flexible,fixed,nil];
+  [self setToolbarItems:buttons animated:YES];
+}
+
+- (void)showSettings {
+  id settings = [GHSettingsViewController new];
+  id controller = [[UINavigationController alloc] initWithRootViewController:settings];
+  [self presentModalViewController:controller animated:YES];
+  
+  [settings release];
+  [controller release];
 }
 
 #pragma mark -
