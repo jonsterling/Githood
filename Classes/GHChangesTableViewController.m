@@ -11,6 +11,7 @@
 
 @interface GHChangesTableViewController ()
 @property (nonatomic,retain) GHChangesStatusItemController *statusItem;
+@property (nonatomic,assign) BOOL headerIsDocked;
 @end
 
 @interface GHChangesTableViewController (TypeSpecification)
@@ -21,6 +22,7 @@
 @synthesize commit;
 @synthesize repository;
 @synthesize statusItem;
+@synthesize headerIsDocked;
 
 - (void)dealloc {
   [commit release];
@@ -56,13 +58,13 @@
   self.tableModel.commit = self.commit;
   self.tableModel.repository = self.repository;
   
+  self.tableView.backgroundView = [[UIView new] autorelease];
   self.tableView.rowHeight = 44.0f;
   
   GHHeaderView *headerView = [GHHeaderView view];
   headerView.text = self.commit.message;
   
   self.tableView.tableHeaderView = headerView;
-  self.tableView.backgroundColor = [GHStyler gradientLightColor];
   
   self.statusItem = [GHChangesStatusItemController controller];
   self.statusItem.dataSource = self.tableModel;
@@ -78,10 +80,31 @@
   cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 }
 
+#pragma mark -
+#pragma mark GHTableModelDelegate
+
 - (void)dataDidChange {
   [super dataDidChange];
   [self.statusItem refreshLabel];
 }
 
+#pragma mark -
+#pragma mark UIScrollViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+  UIView *header = self.tableView.tableHeaderView;
+  
+  if (scrollView.contentOffset.y < 0) {
+    [header removeFromSuperview];    
+    [self.tableView.backgroundView addSubview:header];
+    self.headerIsDocked = YES;
+  }
+  
+  else if (self.headerIsDocked) {
+    [header removeFromSuperview];
+    [self.tableView addSubview:header];
+    self.headerIsDocked = NO;
+  }
+}
 
 @end
