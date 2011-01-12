@@ -4,7 +4,7 @@
 #import "GitHubRepository.h"
 #import "GHCommitViewController.h"
 
-@interface GHCommitsTableViewController ()
+@interface GHCommitsTableViewController (TypeSpecification)
 @property (nonatomic, readonly) GHCommitsTableModel *tableModel;
 @end
 
