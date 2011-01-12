@@ -72,6 +72,7 @@ static CGFloat kOffset = 10.0;
                               CGPointZero,
                               CGPointMake(0, rect.size.height),
                               kCGGradientDrawsBeforeStartLocation);
+  CGGradientRelease(grad);
 }
 
 - (void)drawBorderInRect:(CGRect)rect {
