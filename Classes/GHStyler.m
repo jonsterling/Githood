@@ -31,23 +31,23 @@
   static CGGradientRef gradient = NULL;
   
   if (!gradient) {
-		CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-		CGFloat components[3][4];
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    CGFloat components[3][4];
     
-		memcpy(components[0],
+    memcpy(components[0],
            CGColorGetComponents(self.gradientLightColor.CGColor),
            sizeof(CGFloat) * 4);
-		memcpy(components[1],
+    memcpy(components[1],
            CGColorGetComponents(self.gradientDarkColor.CGColor),
            sizeof(CGFloat) * 4);
-		
-		const CGFloat endpoints[2] = {0.0, 1.0};
     
-		gradient = CGGradientCreateWithColorComponents(colorSpace,
+    const CGFloat endpoints[2] = {0.0, 1.0};
+    
+    gradient = CGGradientCreateWithColorComponents(colorSpace,
                                                    (const CGFloat *)components,
                                                    endpoints,2);
-		CFRelease(colorSpace);
-	}
+    CFRelease(colorSpace);
+  }
   
   return gradient;
 }
