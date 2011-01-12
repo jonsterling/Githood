@@ -1,17 +1,36 @@
 #import "GHHeaderView.h"
 #import <CoreGraphics/CoreGraphics.h>
 
+static CGFloat kOffset = 10.0;
+
 @interface GHHeaderView ()
+@property (nonatomic,retain,readonly) UILabel *label;
 - (void)drawBackgroundInRect:(CGRect)rect;
 - (void)drawBorderInRect:(CGRect)rect;
 @end
 
 @implementation GHHeaderView
 @synthesize text;
+@synthesize label;
 
 - (id)init {
   CGFloat width = [UIScreen mainScreen].bounds.size.width;
   return [self initWithFrame:(CGRect){{0,0},{width,100.0}}];
+}
+
+- (id)initWithFrame:(CGRect)frame {
+  self = [super initWithFrame:frame];
+  if (self != nil) {
+    label = [[UILabel alloc] initWithFrame:CGRectMake(kOffset, kOffset, 0.0, 0.0)];
+    label.font = [UIFont systemFontOfSize:15.0];
+    label.backgroundColor = [UIColor clearColor];
+    label.shadowColor = [UIColor whiteColor];
+    label.shadowOffset = (CGSize){1.0,1.0};
+    label.numberOfLines = 0;
+    label.lineBreakMode = UILineBreakModeWordWrap;
+    
+    [self addSubview:label];
+  } return self;
 }
 
 + (id)view {
@@ -22,28 +41,18 @@
   [text autorelease];
   text = [string copy];
   
-  [self setNeedsDisplay];
+  self.label.text = self.text;
+  CGSize insetSize = CGRectInset(self.bounds, kOffset, kOffset).size;
+  CGSize textSize = [self.text sizeWithFont:self.label.font 
+                          constrainedToSize:CGSizeMake(insetSize.width, CGFLOAT_MAX)];
+  
+  self.frame = (CGRect){self.frame.origin,{textSize.width + 2*kOffset,textSize.height + 2*kOffset}};
+  self.label.frame = (CGRect){self.label.frame.origin,textSize};
 }
 
 - (void)drawRect:(CGRect)rect {
   [self drawBackgroundInRect:self.bounds];
   [self drawBorderInRect:self.bounds];
-  
-  UILabel *l = [[UILabel alloc] initWithFrame:CGRectZero];
-  l.text = self.text;
-  l.font = [UIFont systemFontOfSize:15.0];
-  l.backgroundColor = [UIColor clearColor];
-  l.shadowColor = [UIColor whiteColor];
-  l.shadowOffset = (CGSize){1.0,1.0};
-  l.numberOfLines = 0;
-  
-  CGRect insetRect = CGRectInset(self.bounds, 10.0, 10.0);
-  CGSize textSize = [self.text sizeWithFont:l.font constrainedToSize:insetRect.size];
-  CGRect textRect = (CGRect){insetRect.origin, textSize};
-  
-  [l drawTextInRect:textRect];
-  
-  [l release];
 }
 
 - (void)drawBackgroundInRect:(CGRect)rect {
