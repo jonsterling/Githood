@@ -4,8 +4,13 @@
 #import "GitHubCommitServiceFactory.h"
 #import "GitHubServiceGotCommitDelegate.h"
 #import "GHChangesTableModel.h"
+#import "GHChangesStatusItemController.h"
 
 #import "GHHeaderView.h"
+
+@interface GHChangesTableViewController ()
+@property (nonatomic,retain) GHChangesStatusItemController *statusItem;
+@end
 
 @interface GHChangesTableViewController (TypeSpecification)
 @property (nonatomic,readonly) GHChangesTableModel *tableModel;
@@ -14,6 +19,7 @@
 @implementation GHChangesTableViewController
 @synthesize commit;
 @synthesize repository;
+@synthesize statusItem;
 
 - (void)dealloc {
   [self releaseProperties];
@@ -55,6 +61,11 @@
   self.tableView.tableHeaderView = headerView;
   self.tableView.backgroundColor = [UIColor colorWithWhite:0.98 alpha:1.0];
   
+  self.statusItem = [GHChangesStatusItemController controller];
+  self.statusItem.dataSource = self.tableModel;
+  
+  [self setSoleToolbarItem:self.statusItem.buttonItem];
+  
   [self refreshData];
 }
 
@@ -62,6 +73,11 @@
   cell.textLabel.text = object;
   cell.textLabel.font = [UIFont boldSystemFontOfSize:(1.2*[UIFont systemFontSize])];
   cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+}
+
+- (void)dataDidChange {
+  [super dataDidChange];
+  [self.statusItem refreshLabel];
 }
 
 

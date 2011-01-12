@@ -29,7 +29,7 @@
   return [self.sortedRepositories objectAtIndex:indexPath.row];
 }
 
-- (NSUInteger)numberOfItemsForStatusItemController:(id)controller; {
+- (NSUInteger)numberOfItemsForStatusItem:(id)controller; {
   return self.sortedRepositories.count;
 }
 

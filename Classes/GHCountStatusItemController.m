@@ -12,7 +12,7 @@
 }
 
 - (void)refreshLabel {
-  NSUInteger count = [self.dataSource numberOfItemsForStatusItemController:self];
+  NSUInteger count = [self.dataSource numberOfItemsForStatusItem:self];
   NSString *type = (count == 1) ? self.singularType : self.pluralType;
   self.textLabel.text = [NSString stringWithFormat:@"%i %@",count,type];
 }

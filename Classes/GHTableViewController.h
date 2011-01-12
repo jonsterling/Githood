@@ -12,4 +12,5 @@
 @property (nonatomic,retain,readonly) GHRefreshBarButtonController *refreshItem;
 
 - (void)refreshData;
+- (void)setSoleToolbarItem:(UIBarButtonItem *)item;
 @end

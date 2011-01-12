@@ -45,7 +45,7 @@
 #pragma mark -
 #pragma mark GHCountStatusItemDataSource
 
-- (NSUInteger)numberOfItemsForStatusItemController:(id)controller {
+- (NSUInteger)numberOfItemsForStatusItem:(id)controller {
   return self.sortedCommits.count;
 }
 

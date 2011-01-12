@@ -71,6 +71,8 @@
 		FC40113212DD63C70050B3E1 /* GHCountStatusItemController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC40113112DD63C70050B3E1 /* GHCountStatusItemController.xib */; };
 		FC40113A12DD671D0050B3E1 /* GHCountStatusItemController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC40113912DD671D0050B3E1 /* GHCountStatusItemController.m */; };
 		FC40113D12DD78700050B3E1 /* GHRefreshBarButtonController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC40113C12DD78700050B3E1 /* GHRefreshBarButtonController.m */; };
+		FC40114212DD81B10050B3E1 /* GHChangesStatusItemController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC40114012DD81B10050B3E1 /* GHChangesStatusItemController.m */; };
+		FC40114712DD837B0050B3E1 /* GHChangesStatusItemController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC40114612DD837B0050B3E1 /* GHChangesStatusItemController.xib */; };
 		FC4BFFF012DB9385009575D7 /* NSObject+ReleaseProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FC4BFFEF12DB9385009575D7 /* NSObject+ReleaseProperties.m */; };
 		FC8B40BA12DD338600197CBD /* GHHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8B40B912DD338600197CBD /* GHHeaderView.m */; };
 		FCC39D5B12DAB4D100364773 /* GHChangesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC39D5912DAB4D100364773 /* GHChangesTableViewController.m */; };
@@ -221,6 +223,9 @@
 		FC40113912DD671D0050B3E1 /* GHCountStatusItemController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHCountStatusItemController.m; sourceTree = "<group>"; };
 		FC40113B12DD78700050B3E1 /* GHRefreshBarButtonController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHRefreshBarButtonController.h; sourceTree = "<group>"; };
 		FC40113C12DD78700050B3E1 /* GHRefreshBarButtonController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHRefreshBarButtonController.m; sourceTree = "<group>"; };
+		FC40113F12DD81B10050B3E1 /* GHChangesStatusItemController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHChangesStatusItemController.h; sourceTree = "<group>"; };
+		FC40114012DD81B10050B3E1 /* GHChangesStatusItemController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHChangesStatusItemController.m; sourceTree = "<group>"; };
+		FC40114612DD837B0050B3E1 /* GHChangesStatusItemController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GHChangesStatusItemController.xib; sourceTree = "<group>"; };
 		FC4BFFEE12DB9385009575D7 /* NSObject+ReleaseProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+ReleaseProperties.h"; path = "Classes/NSObject+ReleaseProperties.h"; sourceTree = "<group>"; };
 		FC4BFFEF12DB9385009575D7 /* NSObject+ReleaseProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+ReleaseProperties.m"; path = "Classes/NSObject+ReleaseProperties.m"; sourceTree = "<group>"; };
 		FC8B40B812DD338600197CBD /* GHHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHHeaderView.h; sourceTree = "<group>"; };
@@ -563,15 +568,26 @@
 		FC40112A12DD61C10050B3E1 /* Bar Items */ = {
 			isa = PBXGroup;
 			children = (
+				FC40113E12DD81840050B3E1 /* Status Items */,
+				FC40113B12DD78700050B3E1 /* GHRefreshBarButtonController.h */,
+				FC40113C12DD78700050B3E1 /* GHRefreshBarButtonController.m */,
+			);
+			name = "Bar Items";
+			sourceTree = "<group>";
+		};
+		FC40113E12DD81840050B3E1 /* Status Items */ = {
+			isa = PBXGroup;
+			children = (
 				FC40112E12DD623C0050B3E1 /* GHStatusBarButtonController.h */,
 				FC40112F12DD623C0050B3E1 /* GHStatusBarButtonController.m */,
 				FC40113812DD671D0050B3E1 /* GHCountStatusItemController.h */,
 				FC40113912DD671D0050B3E1 /* GHCountStatusItemController.m */,
 				FC40113112DD63C70050B3E1 /* GHCountStatusItemController.xib */,
-				FC40113B12DD78700050B3E1 /* GHRefreshBarButtonController.h */,
-				FC40113C12DD78700050B3E1 /* GHRefreshBarButtonController.m */,
+				FC40113F12DD81B10050B3E1 /* GHChangesStatusItemController.h */,
+				FC40114012DD81B10050B3E1 /* GHChangesStatusItemController.m */,
+				FC40114612DD837B0050B3E1 /* GHChangesStatusItemController.xib */,
 			);
-			name = "Bar Items";
+			name = "Status Items";
 			sourceTree = "<group>";
 		};
 		FC8B40B712DD334E00197CBD /* View */ = {
@@ -655,6 +671,7 @@
 				FC39275A12D67A2500F5A82A /* navigation_bar.png in Resources */,
 				FC1D7D4612D8460100AA4AB1 /* navigation_bar2.png in Resources */,
 				FC40113212DD63C70050B3E1 /* GHCountStatusItemController.xib in Resources */,
+				FC40114712DD837B0050B3E1 /* GHChangesStatusItemController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -743,6 +760,7 @@
 				FC40113012DD623C0050B3E1 /* GHStatusBarButtonController.m in Sources */,
 				FC40113A12DD671D0050B3E1 /* GHCountStatusItemController.m in Sources */,
 				FC40113D12DD78700050B3E1 /* GHRefreshBarButtonController.m in Sources */,
+				FC40114212DD81B10050B3E1 /* GHChangesStatusItemController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

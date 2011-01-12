@@ -43,6 +43,14 @@
   [self.tableModel addTableModelListener:self];
 }
 
+- (void)setSoleToolbarItem:(UIBarButtonItem *)item {
+  id flexibleSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
+                                                                   target:nil 
+                                                                   action:nil];
+  self.toolbarItems = [NSArray arrayWithObjects:flexibleSpace,item,flexibleSpace,nil];
+  [flexibleSpace release];
+}
+
 - (void)configureBars {
   UIToolbar *tb = self.navigationController.toolbar;
   UINavigationBar *nb = self.navigationController.navigationBar;

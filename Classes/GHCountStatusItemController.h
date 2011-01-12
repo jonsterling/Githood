@@ -9,9 +9,8 @@
 @property (nonatomic,copy) NSString *singularType;
 @property (nonatomic,copy) NSString *pluralType;
 
-- (void)refreshLabel;
 @end
 
 @protocol GHCountStatusItemDataSource
-- (NSUInteger)numberOfItemsForStatusItemController:(id)controller;
+- (NSUInteger)numberOfItemsForStatusItem:(id)controller;
 @end

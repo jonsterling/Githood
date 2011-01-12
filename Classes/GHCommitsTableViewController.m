@@ -48,17 +48,7 @@
   
   self.statusItem.dataSource = self.tableModel;
   
-  id flexibleSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
-                                                                   target:nil 
-                                                                   action:nil];
-  
-  self.toolbarItems = [NSArray arrayWithObjects:
-                       flexibleSpace,
-                       self.statusItem.buttonItem,
-                       flexibleSpace,
-                       nil];
-  
-  [flexibleSpace release];
+  [self setSoleToolbarItem:self.statusItem.buttonItem];
   
   [self refreshData];
 }
