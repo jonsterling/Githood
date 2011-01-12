@@ -5,6 +5,7 @@
 
 @interface GHTableModel ()
 @property (nonatomic, readonly) NSMutableArray *sections;
+- (void)stubSection:(NSUInteger)section;
 - (void)setObjects:(NSArray *)objects forSection:(NSUInteger)section;
 @end
 
@@ -35,12 +36,16 @@
 }
 
 - (NSArray *)objectsForSection:(NSUInteger)index {
-  if (index >= self.sections.count) {
-    [self.sections insertObject:[NSMutableArray array] atIndex:index];
-    [self notifyListeners:[LRTableModelEvent insertedSection:index]];
-  }
+  [self stubSection:index];
   
   return [self.sections objectAtIndex:index];
+}
+
+- (void)stubSection:(NSUInteger)section {
+  if (section >= self.sections.count) {
+    [self.sections insertObject:[NSMutableArray array] atIndex:section];
+    [self notifyListeners:[LRTableModelEvent insertedSection:section]];
+  }
 }
 
 - (void)setObjects:(NSArray *)objects forSection:(NSUInteger)section {
@@ -50,7 +55,11 @@
 #pragma mark -
 #pragma mark Insertion
 
-- (void)addObjects:(id <NSFastEnumeration>)objs toSection:(NSUInteger)sectionIndex {
+- (void)addObjects:(NSArray *)objs toSection:(NSUInteger)sectionIndex {
+  if (objs.count == 0) {
+    [self stubSection:sectionIndex];
+  }
+  
   for (id o in objs) {
     [self addObject:o toSection:sectionIndex];
   }
