@@ -1,6 +1,6 @@
 @interface GHHeaderView : UIView
 @property (nonatomic,copy) NSString *text;
 
-- (id)init;
-+ (id)view;
+- (id)initWithText:(NSString *)text;
++ (id)withText:(NSString *)text;
 @end

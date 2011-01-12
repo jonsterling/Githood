@@ -80,6 +80,7 @@
 		FC7F764D12DE462E00BD23BB /* GHStyler.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7F764C12DE462E00BD23BB /* GHStyler.m */; };
 		FC7F765C12DE4A5900BD23BB /* GHGroupedTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7F765B12DE4A5900BD23BB /* GHGroupedTableView.m */; };
 		FC7F765E12DE5BCA00BD23BB /* 262@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FC7F765D12DE5BCA00BD23BB /* 262@2x.png */; };
+		FC7F766212DE65FF00BD23BB /* GHDockingTableHeaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7F766112DE65FF00BD23BB /* GHDockingTableHeaderViewController.m */; };
 		FC8B40BA12DD338600197CBD /* GHHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8B40B912DD338600197CBD /* GHHeaderView.m */; };
 		FCC39D5B12DAB4D100364773 /* GHChangesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC39D5912DAB4D100364773 /* GHChangesTableViewController.m */; };
 		FCC8A9E312DBC3FF0027A6D1 /* GHChangesTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC8A9E212DBC3FF0027A6D1 /* GHChangesTableModel.m */; };
@@ -243,6 +244,8 @@
 		FC7F765A12DE4A5900BD23BB /* GHGroupedTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHGroupedTableView.h; sourceTree = "<group>"; };
 		FC7F765B12DE4A5900BD23BB /* GHGroupedTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHGroupedTableView.m; sourceTree = "<group>"; };
 		FC7F765D12DE5BCA00BD23BB /* 262@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "262@2x.png"; sourceTree = "<group>"; };
+		FC7F766012DE65FF00BD23BB /* GHDockingTableHeaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHDockingTableHeaderViewController.h; sourceTree = "<group>"; };
+		FC7F766112DE65FF00BD23BB /* GHDockingTableHeaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHDockingTableHeaderViewController.m; sourceTree = "<group>"; };
 		FC8B40B812DD338600197CBD /* GHHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHHeaderView.h; sourceTree = "<group>"; };
 		FC8B40B912DD338600197CBD /* GHHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHHeaderView.m; sourceTree = "<group>"; };
 		FCC39D5812DAB4D100364773 /* GHChangesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHChangesTableViewController.h; sourceTree = "<group>"; };
@@ -481,6 +484,7 @@
 				FC1D7A2612D806B700AA4AB1 /* GHCommitsTableViewController.m */,
 				FCC39D5812DAB4D100364773 /* GHChangesTableViewController.h */,
 				FCC39D5912DAB4D100364773 /* GHChangesTableViewController.m */,
+				FC7F765F12DE657A00BD23BB /* Components */,
 				FC7F764512DE3A8500BD23BB /* Settings */,
 			);
 			name = "View Controller";
@@ -628,6 +632,16 @@
 			name = Helper;
 			sourceTree = "<group>";
 		};
+		FC7F765F12DE657A00BD23BB /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				FC40112A12DD61C10050B3E1 /* Bar Items */,
+				FC7F766012DE65FF00BD23BB /* GHDockingTableHeaderViewController.h */,
+				FC7F766112DE65FF00BD23BB /* GHDockingTableHeaderViewController.m */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
 		FC8B40B712DD334E00197CBD /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -635,7 +649,6 @@
 				FC8B40B912DD338600197CBD /* GHHeaderView.m */,
 				FC7F765A12DE4A5900BD23BB /* GHGroupedTableView.h */,
 				FC7F765B12DE4A5900BD23BB /* GHGroupedTableView.m */,
-				FC40112A12DD61C10050B3E1 /* Bar Items */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -807,6 +820,7 @@
 				FC7F764412DE3A7900BD23BB /* GHSettingsViewController.m in Sources */,
 				FC7F764D12DE462E00BD23BB /* GHStyler.m in Sources */,
 				FC7F765C12DE4A5900BD23BB /* GHGroupedTableView.m in Sources */,
+				FC7F766212DE65FF00BD23BB /* GHDockingTableHeaderViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

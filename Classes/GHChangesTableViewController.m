@@ -7,10 +7,12 @@
 #import "GHChangesStatusItemController.h"
 
 #import "GHHeaderView.h"
+#import "GHDockingTableHeaderViewController.h"
 #import "GHStyler.h"
 
 @interface GHChangesTableViewController ()
 @property (nonatomic,retain) GHChangesStatusItemController *statusItem;
+@property (nonatomic,retain) GHDockingTableHeaderViewController *headerController;
 @property (nonatomic,assign) BOOL headerIsDocked;
 @end
 
@@ -22,12 +24,14 @@
 @synthesize commit;
 @synthesize repository;
 @synthesize statusItem;
+@synthesize headerController;
 @synthesize headerIsDocked;
 
 - (void)dealloc {
   [commit release];
   [repository release];
   [statusItem release];
+  [headerController release];
   [super dealloc];
 }
 
@@ -61,10 +65,9 @@
   self.tableView.backgroundView = [[UIView new] autorelease];
   self.tableView.rowHeight = 44.0f;
   
-  GHHeaderView *headerView = [GHHeaderView view];
-  headerView.text = self.commit.message;
-  
-  self.tableView.tableHeaderView = headerView;
+  id headerView = [GHHeaderView withText:self.commit.message];
+  self.headerController = [GHDockingTableHeaderViewController withTableView:self.tableView
+                                                                 headerView:headerView];
   
   self.statusItem = [GHChangesStatusItemController controller];
   self.statusItem.dataSource = self.tableModel;
@@ -92,19 +95,7 @@
 #pragma mark UIScrollViewDelegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-  UIView *header = self.tableView.tableHeaderView;
-  
-  if (scrollView.contentOffset.y < 0) {
-    [header removeFromSuperview];    
-    [self.tableView.backgroundView addSubview:header];
-    self.headerIsDocked = YES;
-  }
-  
-  else if (self.headerIsDocked) {
-    [header removeFromSuperview];
-    [self.tableView addSubview:header];
-    self.headerIsDocked = NO;
-  }
+  [self.headerController scrollViewDidScroll:scrollView];
 }
 
 @end

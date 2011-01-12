@@ -14,6 +14,17 @@ static CGFloat kOffset = 10.0;
 @synthesize text;
 @synthesize label;
 
+- (id)initWithText:(NSString *)aText {
+  self = [self init];
+  if (self != nil) {
+    self.text = aText;
+  } return self;
+}
+
++ (id)withText:(NSString *)text {
+  return [[[self alloc] initWithText:text] autorelease];
+}
+
 - (id)init {
   CGFloat width = [UIScreen mainScreen].bounds.size.width;
   return [self initWithFrame:(CGRect){{0,0},{width,100.0}}];
@@ -32,10 +43,6 @@ static CGFloat kOffset = 10.0;
     
     [self addSubview:label];
   } return self;
-}
-
-+ (id)view {
-  return [[self new] autorelease];
 }
 
 - (void)setText:(NSString *)string {
