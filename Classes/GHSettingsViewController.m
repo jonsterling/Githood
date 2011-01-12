@@ -1,5 +1,6 @@
 #import "GHSettingsViewController.h"
 #import "UIBarButtonItem+Custom.h"
+#import "GHGroupedTableView.h"
 #import "GHStyler.h"
 
 @interface GHSettingsViewController ()
@@ -16,12 +17,23 @@
   [super dealloc];
 }
 
+- (void)loadView {
+  GHGroupedTableView *table = [[GHGroupedTableView alloc] initWithFrame:CGRectZero 
+                                                                  style:UITableViewStyleGrouped];
+  self.view = table;
+  self.tableView = table;
+  self.tableView.delegate = self;
+  self.tableView.dataSource = self;
+  
+  [table release];
+}
+
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
   
-  self.title = @"Settings";
+  [GHStyler styleNavigationController:self.navigationController];
   
-  [GHStyler styleNavigationBar:self.navigationController.navigationBar];
+  self.title = @"Settings";
   
   UIBarButtonItem *doneItem = [UIBarButtonItem withSystemItem:UIBarButtonSystemItemDone 
                                                        target:self
@@ -40,8 +52,16 @@
   return 1;
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+  return @"Your Login";
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
+  return @"Enter your GitHub username or email here to see your watched repositories.";
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-  return 0;
+  return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

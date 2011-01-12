@@ -7,6 +7,7 @@
 #import "GHChangesStatusItemController.h"
 
 #import "GHHeaderView.h"
+#import "GHStyler.h"
 
 @interface GHChangesTableViewController ()
 @property (nonatomic,retain) GHChangesStatusItemController *statusItem;
@@ -61,7 +62,7 @@
   headerView.text = self.commit.message;
   
   self.tableView.tableHeaderView = headerView;
-  self.tableView.backgroundColor = [UIColor colorWithWhite:0.98 alpha:1.0];
+  self.tableView.backgroundColor = [GHStyler gradientLightColor];
   
   self.statusItem = [GHChangesStatusItemController controller];
   self.statusItem.dataSource = self.tableModel;

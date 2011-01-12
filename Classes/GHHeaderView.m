@@ -1,4 +1,5 @@
 #import "GHHeaderView.h"
+#import "GHStyler.h"
 #import <CoreGraphics/CoreGraphics.h>
 
 static CGFloat kOffset = 10.0;
@@ -56,35 +57,24 @@ static CGFloat kOffset = 10.0;
 }
 
 - (void)drawBackgroundInRect:(CGRect)rect {
-  CGContextRef ctx = UIGraphicsGetCurrentContext();
-  
-  CGFloat ls[2] = { 0.0, 1.0 };
-  CGFloat cs[8] = { 0.98, 0.98, 0.98, 1.0,
-                    0.85, 0.85, 0.85, 1.0 };
-  
-  size_t num = sizeof(ls)/sizeof(CGFloat);
-  
-  CGColorSpaceRef space = CGColorSpaceCreateDeviceRGB();
-  CGGradientRef grad = CGGradientCreateWithColorComponents(space,cs,ls,num);
-  CGColorSpaceRelease(space);
-  
-  CGContextDrawLinearGradient(ctx,grad,
+  CGContextRef context = UIGraphicsGetCurrentContext();
+  CGContextDrawLinearGradient(context,
+                              [GHStyler gradient],
                               CGPointZero,
                               CGPointMake(0, rect.size.height),
                               kCGGradientDrawsBeforeStartLocation);
-  CGGradientRelease(grad);
 }
 
 - (void)drawBorderInRect:(CGRect)rect {
   CGContextRef ctx = UIGraphicsGetCurrentContext();
-
+  
   UIColor *stc = [UIColor colorWithWhite:0.7 alpha:1.0];
   CGContextSetStrokeColorWithColor(ctx,stc.CGColor);
   CGContextSetLineWidth(ctx,2.0);
-
+  
   CGPoint ps[2] = { CGPointMake(0.0,rect.size.height),
                     CGPointMake(rect.size.width,rect.size.height) };
-
+  
   CGContextStrokeLineSegments(ctx,ps,1);
 }
 
