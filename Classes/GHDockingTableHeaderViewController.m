@@ -1,12 +1,12 @@
 #import "GHDockingTableHeaderViewController.h"
 
 @interface GHDockingTableHeaderViewController ()
-@property (nonatomic,assign) BOOL headerIsDocked;
+@property (readonly) BOOL isHeaderDocked;
 @end
 
 @implementation GHDockingTableHeaderViewController
 @synthesize headerView;
-@synthesize headerIsDocked;
+@dynamic isHeaderDocked;
 
 + (id)withTableView:(UITableView *)tableView headerView:(id)headerView  {
   return [[self alloc] initWithTableView:tableView headerView:headerView];
@@ -33,19 +33,24 @@
 }
 
 #pragma mark -
+#pragma mark State
+
+- (BOOL)isHeaderDocked {
+  return ![[self.headerView superview] isKindOfClass:[UITableView class]];
+}
+
+#pragma mark -
 #pragma mark UIScrollViewDelegate
 
 - (void)scrollViewDidScroll:(UITableView *)tableView {
   if (tableView.contentOffset.y < 0) {
     [self.headerView removeFromSuperview]; 
     [tableView.backgroundView addSubview:self.headerView];
-    self.headerIsDocked = YES;
   }
   
-  else if (self.headerIsDocked) {
+  else if (self.isHeaderDocked) {
     [self.headerView removeFromSuperview];
     [tableView addSubview:self.headerView];
-    self.headerIsDocked = NO;
   }
 }
 
