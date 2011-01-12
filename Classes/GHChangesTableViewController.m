@@ -5,14 +5,13 @@
 #import "GitHubServiceGotCommitDelegate.h"
 #import "GHChangesTableModel.h"
 
-@interface GHChangesTableViewController ()
+@interface GHChangesTableViewController (TypeSpecification)
 @property (nonatomic,readonly) GHChangesTableModel *tableModel;
 @end
 
 @implementation GHChangesTableViewController
 @synthesize commit;
 @synthesize repository;
-@synthesize tableModel;
 
 - (void)dealloc {
   [self releaseProperties];
