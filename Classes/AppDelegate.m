@@ -1,6 +1,8 @@
 #import "AppDelegate.h"
 
 @implementation AppDelegate
+@synthesize window;
+@synthesize navigationController;
 
 - (BOOL)application:(id)application didFinishLaunchingWithOptions:(id)options {
   [self.window addSubview:self.navigationController.view];

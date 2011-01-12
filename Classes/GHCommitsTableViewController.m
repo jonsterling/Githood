@@ -11,6 +11,7 @@
 
 @implementation GHCommitsTableViewController
 @dynamic tableModel;
+@synthesize repository;
 
 + (id)withRepository:(id <GitHubRepository>)repository {
   return [[[self alloc] initWithRepository:repository] autorelease];
