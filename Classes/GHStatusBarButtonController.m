@@ -1,4 +1,5 @@
 #import "GHStatusBarButtonController.h"
+#import "UIBarButtonItem+Custom.h"
 
 @implementation GHStatusBarButtonController
 

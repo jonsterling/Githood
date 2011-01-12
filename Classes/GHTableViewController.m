@@ -2,6 +2,7 @@
 #import "GHTableViewController.h"
 #import "GHTableModel.h"
 #import "GHRefreshBarButtonController.h"
+#import "UIBarButtonItem+Custom.h"
 
 @interface GHTableViewController ()
 @property (nonatomic,retain,readwrite) GHRefreshBarButtonController *refreshItem;

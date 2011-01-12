@@ -1,4 +1,5 @@
 #import "GHSettingsViewController.h"
+#import "UIBarButtonItem+Custom.h"
 
 @implementation GHSettingsViewController
 

@@ -4,6 +4,7 @@
 #import "GHCommitsTableViewController.h"
 #import "GHCountStatusItemController.h"
 #import "GHSettingsViewController.h"
+#import "UIBarButtonItem+Custom.h"
 
 @interface GHReposTableViewController () <GHTableModelDelegate>
 @property (nonatomic,retain) GHCountStatusItemController *statusItem;
