@@ -5,6 +5,8 @@
 #import "GitHubServiceGotCommitDelegate.h"
 #import "GHChangesTableModel.h"
 
+#import "GHHeaderView.h"
+
 @interface GHChangesTableViewController (TypeSpecification)
 @property (nonatomic,readonly) GHChangesTableModel *tableModel;
 @end
@@ -44,6 +46,14 @@
   self.title = @"Commit";
   self.tableModel.commit = self.commit;
   self.tableModel.repository = self.repository;
+  
+  self.tableView.rowHeight = 44.0f;
+  
+  GHHeaderView *headerView = [GHHeaderView view];
+  headerView.text = self.commit.message;
+  
+  self.tableView.tableHeaderView = headerView;
+  self.tableView.backgroundColor = [UIColor colorWithWhite:0.98 alpha:1.0];
   
   [self.tableModel refreshData];
 }
