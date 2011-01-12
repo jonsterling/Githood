@@ -5,7 +5,9 @@
 - (void)refreshData;
 @end
 
+@protocol GHTableModelDelegate;
 @interface GHTableModel : LRAbstractTableModel <GitHubServiceDelegate>
+@property (nonatomic,assign) id <GHTableModelDelegate> delegate;
 
 // ### Accessors:
 - (NSArray *)objectsForSection:(NSUInteger)section;
@@ -23,4 +25,8 @@
 // ### Replacement
 - (void)replaceObjectAtRow:(NSUInteger)index inSection:(NSUInteger)section withObject:(id)object;
 
+@end
+
+@protocol GHTableModelDelegate
+- (void)dataDidChange;
 @end

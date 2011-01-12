@@ -2,12 +2,18 @@
 #import "GHReposTableModel.h"
 #import "GitHubRepository.h"
 #import "GHCommitsTableViewController.h"
+#import "GHCountStatusItemController.h"
+
+@interface GHReposTableViewController () <GHTableModelDelegate>
+@property (nonatomic,retain) GHCountStatusItemController *statusItem;
+@end
 
 @interface GHReposTableViewController (TypeSpecification)
-@property (nonatomic, readonly) GHReposTableModel *tableModel;
+@property (nonatomic,readonly) GHReposTableModel *tableModel;
 @end
 
 @implementation GHReposTableViewController
+@synthesize statusItem;
 
 + (Class)modelClass {
   return [GHReposTableModel class];
@@ -17,10 +23,36 @@
   [super viewDidLoad];
   
   self.title = @"Repositories";
-  self.tableView.rowHeight = 65; 
+  self.tableView.rowHeight = 65;
   
   self.tableModel.username = @"jonsterling";
+  self.tableModel.delegate = self;
+  
+  self.statusItem = [GHCountStatusItemController controller];
+  self.statusItem.singularType = @"repository";
+  self.statusItem.pluralType = @"repositories";
+  self.statusItem.dataSource = self.tableModel;
+  
+  id flexibleSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
+                                                                   target:nil 
+                                                                   action:nil];
+  
+  self.toolbarItems = [NSArray arrayWithObjects:
+                       flexibleSpace,
+                       self.statusItem.buttonItem,
+                       flexibleSpace,
+                       nil];
+  
+  [flexibleSpace release];
+  
   [self.tableModel refreshData];
+}
+
+#pragma mark -
+#pragma mark GHTableModelDelegate
+
+- (void)dataDidChange {
+  [self.statusItem refreshLabel];
 }
 
 #pragma mark -

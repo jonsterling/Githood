@@ -23,6 +23,7 @@
                                           repository:self.repository.name 
                                                 user:self.repository.owner
                                             delegate:self];
+  [self.delegate dataDidChange];
 }
 
 - (NSArray *)sortedCommits {
@@ -39,6 +40,13 @@
 
 - (void)gitHubService:(id <GitHubService>)service gotCommit:(id <GitHubCommit>)commit {
   [self addObject:commit toSection:0];
+}
+
+#pragma mark -
+#pragma mark GHCountStatusItemDataSource
+
+- (NSUInteger)numberOfItemsForStatusItemController:(id)controller {
+  return self.sortedCommits.count;
 }
 
 

@@ -11,6 +11,7 @@
 
 
 @implementation GHTableModel
+@synthesize delegate;
 @synthesize sections;
 
 #pragma mark -
@@ -141,7 +142,7 @@
 }
 
 - (void)gitHubServiceDone:(id <GitHubService>)gitHubService {
-  
+  [self.delegate dataDidChange];
 }
 
 

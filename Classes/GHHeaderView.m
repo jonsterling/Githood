@@ -52,11 +52,13 @@
   CGFloat ls[2] = { 0.0, 1.0 };
   CGFloat cs[8] = { 0.98, 0.98, 0.98, 1.0,
                     0.85, 0.85, 0.85, 1.0 };
+  
   size_t num = sizeof(ls)/sizeof(CGFloat);
   
   CGColorSpaceRef space = CGColorSpaceCreateDeviceRGB();
   CGGradientRef grad = CGGradientCreateWithColorComponents(space,cs,ls,num);
   CGColorSpaceRelease(space);
+  
   CGContextDrawLinearGradient(ctx,grad,
                               CGPointZero,
                               CGPointMake(0, rect.size.height),

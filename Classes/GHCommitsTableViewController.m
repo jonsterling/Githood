@@ -3,6 +3,11 @@
 #import "GitHubCommit.h"
 #import "GitHubRepository.h"
 #import "GHChangesTableViewController.h"
+#import "GHCountStatusItemController.h"
+
+@interface GHCommitsTableViewController () <GHTableModelDelegate>
+@property (nonatomic,retain) GHCountStatusItemController *statusItem;
+@end
 
 @interface GHCommitsTableViewController (TypeSpecification)
 @property (nonatomic, readonly) GHCommitsTableModel *tableModel;
@@ -11,6 +16,7 @@
 
 @implementation GHCommitsTableViewController
 @synthesize repository;
+@synthesize statusItem;
 
 + (id)withRepository:(id <GitHubRepository>)repository {
   return [[[self alloc] initWithRepository:repository] autorelease];
@@ -34,12 +40,39 @@
   self.tableView.rowHeight = 65; 
   
   self.tableModel.repository = self.repository;
+  self.tableModel.delegate = self;
+  
+  self.statusItem = [GHCountStatusItemController controller];
+  self.statusItem.singularType = @"commit";
+  self.statusItem.pluralType = @"commits";
+  
+  self.statusItem.dataSource = self.tableModel;
+  
+  id flexibleSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
+                                                                   target:nil 
+                                                                   action:nil];
+  
+  self.toolbarItems = [NSArray arrayWithObjects:
+                       flexibleSpace,
+                       self.statusItem.buttonItem,
+                       flexibleSpace,
+                       nil];
+  
+  [flexibleSpace release];
+  
   [self.tableModel refreshData];
 }
 
 - (void)dealloc {
   [self releaseProperties];
   [super dealloc];
+}
+
+#pragma mark -
+#pragma mark GHTableModelDelegate
+
+- (void)dataDidChange {
+  [self.statusItem refreshLabel];
 }
 
 #pragma mark -

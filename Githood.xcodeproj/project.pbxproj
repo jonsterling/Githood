@@ -67,6 +67,9 @@
 		FC3927FC12D69FC500F5A82A /* LRTableModelEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3927F812D69FC500F5A82A /* LRTableModelEvent.m */; };
 		FC3927FD12D69FC500F5A82A /* LRAbstractTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3927FB12D69FC500F5A82A /* LRAbstractTableModel.m */; };
 		FC39281112D6A0CB00F5A82A /* GHTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FC39281012D6A0CB00F5A82A /* GHTableModel.m */; };
+		FC40113012DD623C0050B3E1 /* GHStatusBarButtonController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC40112F12DD623C0050B3E1 /* GHStatusBarButtonController.m */; };
+		FC40113212DD63C70050B3E1 /* GHCountStatusItemController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC40113112DD63C70050B3E1 /* GHCountStatusItemController.xib */; };
+		FC40113A12DD671D0050B3E1 /* GHCountStatusItemController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC40113912DD671D0050B3E1 /* GHCountStatusItemController.m */; };
 		FC4BFFF012DB9385009575D7 /* NSObject+ReleaseProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FC4BFFEF12DB9385009575D7 /* NSObject+ReleaseProperties.m */; };
 		FC8B40BA12DD338600197CBD /* GHHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8B40B912DD338600197CBD /* GHHeaderView.m */; };
 		FCC39D5B12DAB4D100364773 /* GHChangesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC39D5912DAB4D100364773 /* GHChangesTableViewController.m */; };
@@ -210,6 +213,11 @@
 		FC3927FB12D69FC500F5A82A /* LRAbstractTableModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRAbstractTableModel.m; sourceTree = "<group>"; };
 		FC39280F12D6A0CB00F5A82A /* GHTableModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHTableModel.h; sourceTree = "<group>"; };
 		FC39281012D6A0CB00F5A82A /* GHTableModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHTableModel.m; sourceTree = "<group>"; };
+		FC40112E12DD623C0050B3E1 /* GHStatusBarButtonController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHStatusBarButtonController.h; sourceTree = "<group>"; };
+		FC40112F12DD623C0050B3E1 /* GHStatusBarButtonController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHStatusBarButtonController.m; sourceTree = "<group>"; };
+		FC40113112DD63C70050B3E1 /* GHCountStatusItemController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GHCountStatusItemController.xib; sourceTree = "<group>"; };
+		FC40113812DD671D0050B3E1 /* GHCountStatusItemController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = GHCountStatusItemController.h; sourceTree = "<group>"; };
+		FC40113912DD671D0050B3E1 /* GHCountStatusItemController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHCountStatusItemController.m; sourceTree = "<group>"; };
 		FC4BFFEE12DB9385009575D7 /* NSObject+ReleaseProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+ReleaseProperties.h"; path = "Classes/NSObject+ReleaseProperties.h"; sourceTree = "<group>"; };
 		FC4BFFEF12DB9385009575D7 /* NSObject+ReleaseProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+ReleaseProperties.m"; path = "Classes/NSObject+ReleaseProperties.m"; sourceTree = "<group>"; };
 		FC8B40B812DD338600197CBD /* GHHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHHeaderView.h; sourceTree = "<group>"; };
@@ -549,11 +557,24 @@
 			path = vendor/LRTableModel/Classes/LRTableModel;
 			sourceTree = "<group>";
 		};
+		FC40112A12DD61C10050B3E1 /* Toolbar Items */ = {
+			isa = PBXGroup;
+			children = (
+				FC40112E12DD623C0050B3E1 /* GHStatusBarButtonController.h */,
+				FC40112F12DD623C0050B3E1 /* GHStatusBarButtonController.m */,
+				FC40113812DD671D0050B3E1 /* GHCountStatusItemController.h */,
+				FC40113912DD671D0050B3E1 /* GHCountStatusItemController.m */,
+				FC40113112DD63C70050B3E1 /* GHCountStatusItemController.xib */,
+			);
+			name = "Toolbar Items";
+			sourceTree = "<group>";
+		};
 		FC8B40B712DD334E00197CBD /* View */ = {
 			isa = PBXGroup;
 			children = (
 				FC8B40B812DD338600197CBD /* GHHeaderView.h */,
 				FC8B40B912DD338600197CBD /* GHHeaderView.m */,
+				FC40112A12DD61C10050B3E1 /* Toolbar Items */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -628,6 +649,7 @@
 				FC32581B12D6738E00EB47A3 /* MainWindow.xib in Resources */,
 				FC39275A12D67A2500F5A82A /* navigation_bar.png in Resources */,
 				FC1D7D4612D8460100AA4AB1 /* navigation_bar2.png in Resources */,
+				FC40113212DD63C70050B3E1 /* GHCountStatusItemController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -713,6 +735,8 @@
 				FC4BFFF012DB9385009575D7 /* NSObject+ReleaseProperties.m in Sources */,
 				FCC8A9E312DBC3FF0027A6D1 /* GHChangesTableModel.m in Sources */,
 				FC8B40BA12DD338600197CBD /* GHHeaderView.m in Sources */,
+				FC40113012DD623C0050B3E1 /* GHStatusBarButtonController.m in Sources */,
+				FC40113A12DD671D0050B3E1 /* GHCountStatusItemController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
