@@ -3,8 +3,6 @@
 // To use `GHDockingTableHeaderViewController`, forward `-scrollViewDidScroll:`
 // to it.
 @interface GHDockingTableHeaderViewController : NSObject <UIScrollViewDelegate>
-@property (nonatomic,readonly) id headerView;
-
-+ (id)withTableView:(UITableView *)tableView headerView:(id)headerView;
-- (id)initWithTableView:(UITableView *)tableView headerView:(id)headerView;
++ (id)withTableView:(UITableView *)tableView headerView:(UIView *)headerView;
+- (id)initWithTableView:(UITableView *)tableView headerView:(UIView *)headerView;
 @end

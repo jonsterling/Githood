@@ -1,34 +1,37 @@
 #import "GHDockingTableHeaderViewController.h"
 
 @interface GHDockingTableHeaderViewController ()
-@property (readonly) BOOL isHeaderDocked;
+@property (nonatomic,readonly) UITableView *tableView;
+@property (nonatomic,readonly) UIView *headerView;
+@property (nonatomic,readonly) BOOL isHeaderDocked;
 @end
 
 @implementation GHDockingTableHeaderViewController
-@synthesize headerView;
+@synthesize tableView;
+@dynamic headerView;
 @dynamic isHeaderDocked;
 
 + (id)withTableView:(UITableView *)tableView headerView:(id)headerView  {
   return [[self alloc] initWithTableView:tableView headerView:headerView];
 }
 
-- (id)initWithTableView:(UITableView *)tableView headerView:(id)aHeaderView {
+- (id)initWithTableView:(UITableView *)aTableView headerView:(id)aHeaderView {
   self = [super init];
   if (self != nil) {
-    headerView = [aHeaderView retain];
+    tableView = [aTableView retain];
     
     if (tableView.backgroundView == nil) {
       tableView.backgroundView = [[UIView new] autorelease];
     }
     
-    tableView.tableHeaderView = headerView;
+    tableView.tableHeaderView = aHeaderView;
   }
   
   return self;
 }
 
 - (void)dealloc {
-  [headerView release];
+  [tableView release];
   [super dealloc];
 }
 
@@ -36,21 +39,25 @@
 #pragma mark State
 
 - (BOOL)isHeaderDocked {
-  return ![[self.headerView superview] isKindOfClass:[UITableView class]];
+  return self.headerView.superview == self.tableView.backgroundView;
+}
+
+- (UIView *)headerView {
+  return self.tableView.tableHeaderView;
 }
 
 #pragma mark -
 #pragma mark UIScrollViewDelegate
 
-- (void)scrollViewDidScroll:(UITableView *)tableView {
-  if (tableView.contentOffset.y < 0) {
+- (void)scrollViewDidScroll:(UITableView *)scrollView {
+  if (self.tableView.contentOffset.y < 0) {
     [self.headerView removeFromSuperview]; 
-    [tableView.backgroundView addSubview:self.headerView];
+    [self.tableView.backgroundView addSubview:self.headerView];
   }
   
   else if (self.isHeaderDocked) {
     [self.headerView removeFromSuperview];
-    [tableView addSubview:self.headerView];
+    [self.tableView addSubview:self.headerView];
   }
 }
 
