@@ -79,7 +79,7 @@
       break;
     case LRTableModelInsertSectionEvent:
       [self.tableView insertSections:[NSIndexSet indexSetWithIndex:changeEvent.indexPath.section] 
-                    withRowAnimation:UITableViewRowAnimationTop];
+                    withRowAnimation:UITableViewRowAnimationMiddle];
       break;
     default:
       [self.tableView reloadData];
