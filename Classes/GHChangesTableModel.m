@@ -5,13 +5,11 @@
 #import "GitHubRepository.h"
 
 @interface GHChangesTableModel () <GitHubServiceGotCommitDelegate>
-@property (nonatomic, readonly) NSMutableArray *mutableObjects;
 @end
 
 @implementation GHChangesTableModel
 @synthesize commit;
 @synthesize repository;
-@synthesize mutableObjects;
 
 - (void)dealloc {
   [commit release];
