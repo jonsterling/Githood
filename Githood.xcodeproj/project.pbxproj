@@ -227,6 +227,7 @@
 		FC40113F12DD81B10050B3E1 /* GHChangesStatusItemController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHChangesStatusItemController.h; sourceTree = "<group>"; };
 		FC40114012DD81B10050B3E1 /* GHChangesStatusItemController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHChangesStatusItemController.m; sourceTree = "<group>"; };
 		FC40114612DD837B0050B3E1 /* GHChangesStatusItemController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GHChangesStatusItemController.xib; sourceTree = "<group>"; };
+		FC7F763B12DE320B00BD23BB /* 261.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 261.png; sourceTree = "<group>"; };
 		FC7F763D12DE323500BD23BB /* UIBarButtonItem+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIBarButtonItem+Custom.h"; path = "Classes/UIBarButtonItem+Custom.h"; sourceTree = "<group>"; };
 		FC7F763E12DE323500BD23BB /* UIBarButtonItem+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIBarButtonItem+Custom.m"; path = "Classes/UIBarButtonItem+Custom.m"; sourceTree = "<group>"; };
 		FC8B40B812DD338600197CBD /* GHHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHHeaderView.h; sourceTree = "<group>"; };
@@ -511,6 +512,7 @@
 		FC32580012D6738E00EB47A3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FC7F763B12DE320B00BD23BB /* 261.png */,
 				FC39275912D67A2500F5A82A /* navigation_bar.png */,
 				FC1D7D4512D8460100AA4AB1 /* navigation_bar2.png */,
 				FC32580F12D6738E00EB47A3 /* Githood-Info.plist */,
@@ -673,6 +675,7 @@
 				FC1D7D4612D8460100AA4AB1 /* navigation_bar2.png in Resources */,
 				FC40113212DD63C70050B3E1 /* GHCountStatusItemController.xib in Resources */,
 				FC40114712DD837B0050B3E1 /* GHChangesStatusItemController.xib in Resources */,
+				FC7F763C12DE320B00BD23BB /* 261.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

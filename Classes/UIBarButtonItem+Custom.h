@@ -3,4 +3,6 @@
 + (id)withTitle:(NSString *)title style:(UIBarButtonItemStyle)style target:(id)target action:(SEL)action;
 + (id)withSystemItem:(UIBarButtonSystemItem)systemItem target:(id)target action:(SEL)action;
 + (id)withCustomView:(UIView *)customView;
+
++ (id)settingsItemWithStyle:(UIBarButtonItemStyle)style target:(id)target action:(SEL)action;
 @end

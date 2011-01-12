@@ -18,4 +18,9 @@
   return [[[self alloc] initWithCustomView:customView] autorelease];
 }
 
+
++ (id)settingsItemWithStyle:(UIBarButtonItemStyle)style target:(id)target action:(SEL)action {
+  return [self withImage:[UIImage imageNamed:@"261"] style:style target:target action:action];
+}
+
 @end
