@@ -13,7 +13,7 @@ Store. You're free to download it from here and install it on your devices or
 whatever, I don't care!
 
 If you are feeling magnanimous and want to fork it, that's really cool. When
-you've done something need, send me a pull request so that I can merge it in!
+you've done something neat, send me a pull request so that I can merge it in!
 Just know that anything that gets merged in will be included in updates to the
 App Store app (contributors will be credited).
 
