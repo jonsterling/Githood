@@ -2,7 +2,7 @@
 #import "GHCommitsTableModel.h"
 #import "GitHubCommit.h"
 #import "GitHubRepository.h"
-#import "GHCommitViewController.h"
+#import "GHChangesTableViewController.h"
 
 @interface GHCommitsTableViewController (TypeSpecification)
 @property (nonatomic, readonly) GHCommitsTableModel *tableModel;
@@ -10,7 +10,6 @@
 
 
 @implementation GHCommitsTableViewController
-@dynamic tableModel;
 @synthesize repository;
 
 + (id)withRepository:(id <GitHubRepository>)repository {
@@ -64,7 +63,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(id)path {
   id <GitHubCommit> commit = [self.tableModel objectAtIndexPath:path];
-  id controller = [GHCommitViewController withCommit:commit];
+  id controller = [GHChangesTableViewController withCommit:commit fromRepository:self.repository];
   [self.navigationController pushViewController:controller animated:YES];
 }
 
