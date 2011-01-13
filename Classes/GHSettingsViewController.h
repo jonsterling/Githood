@@ -4,6 +4,7 @@
 
 @interface GHSettingsViewController : UITableViewController
 @property (nonatomic,assign) id <GHSettingsDelegate> delegate;
+@property (nonatomic, copy) NSString *username;
 @end
 
 @protocol GHSettingsDelegate

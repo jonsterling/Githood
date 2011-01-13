@@ -5,7 +5,7 @@
 #import "GHStyler.h"
 
 @interface GHSettingsViewController () <UITextFieldDelegate>
-@property (nonatomic, copy) NSString *username;
+@property (nonatomic, readonly) UITextField *textField;
 - (void)cancel;
 - (void)done;
 @end
@@ -13,6 +13,7 @@
 @implementation GHSettingsViewController
 @synthesize delegate;
 @synthesize username;
+@dynamic textField;
 
 - (id)initWithStyle:(UITableViewStyle)style {
   return [super initWithStyle:UITableViewStyleGrouped];
@@ -38,17 +39,22 @@
   
   [GHStyler styleNavigationController:self.navigationController];
   
-  self.title = @"Settings";
+  self.title = @"Login";
   
   UIBarButtonItem *doneItem = [UIBarButtonItem withSystemItem:UIBarButtonSystemItemCancel
                                                        target:self
                                                        action:@selector(cancel)];
   self.navigationItem.leftBarButtonItem = doneItem;
   
-  id path = [NSIndexPath indexPathForRow:0 inSection:0];
-  id cell = [self.tableView cellForRowAtIndexPath:path];
-  id textField = objc_getAssociatedObject(cell, @"textField");
-  [textField becomeFirstResponder];
+  self.textField.text = self.username;
+  [self.textField becomeFirstResponder];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+  [super viewDidAppear:animated];
+  
+  [self.textField selectAll:self];
+  [UIMenuController sharedMenuController].menuVisible = NO;
 }
 
 - (void)done {
@@ -60,6 +66,12 @@
 - (void)cancel {
   [self dismissModalViewControllerAnimated:YES];
   [self.delegate settingsControllerDidCancel:[[self retain] autorelease]];
+}
+
+- (UITextField *)textField {
+  id path = [NSIndexPath indexPathForRow:0 inSection:0];
+  id cell = [self.tableView cellForRowAtIndexPath:path];
+  return objc_getAssociatedObject(cell, @"textField");
 }
 
 #pragma mark -

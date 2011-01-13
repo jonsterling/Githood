@@ -67,8 +67,9 @@
 }
 
 - (void)showSettings {
-  id settings = [GHSettingsViewController new];
-  [settings setDelegate:self];
+  GHSettingsViewController *settings = [GHSettingsViewController new];
+  settings.delegate = self;
+  settings.username = self.tableModel.username;
   
   id controller = [[UINavigationController alloc] initWithRootViewController:settings];
   [self presentModalViewController:controller animated:YES];
