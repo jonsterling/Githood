@@ -45,7 +45,7 @@
 					<object class="IBUILabel" id="944859308">
 						<reference key="NSNextResponder" ref="187287732"/>
 						<int key="NSvFlags">290</int>
-						<string key="NSFrame">{{0, 11}, {222, 21}}</string>
+						<string key="NSFrame">{{0, 11}, {322, 21}}</string>
 						<reference key="NSSuperview" ref="187287732"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView"/>
@@ -54,7 +54,7 @@
 						<int key="IBUIContentMode">7</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<string key="IBUIText">Label</string>
+						<string key="IBUIText">%i modified, %i added, %i removed</string>
 						<object class="NSFont" key="IBUIFont">
 							<string key="NSName">Helvetica</string>
 							<double key="NSSize">14</double>
@@ -74,7 +74,7 @@
 						<int key="IBUITextAlignment">1</int>
 					</object>
 				</object>
-				<string key="NSFrameSize">{222, 44}</string>
+				<string key="NSFrameSize">{320, 44}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="944859308"/>
