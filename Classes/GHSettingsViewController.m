@@ -1,13 +1,18 @@
+#import <objc/runtime.h>
 #import "GHSettingsViewController.h"
 #import "UIBarButtonItem+Custom.h"
 #import "GHGroupedTableView.h"
 #import "GHStyler.h"
 
-@interface GHSettingsViewController ()
-- (void)close;
+@interface GHSettingsViewController () <UITextFieldDelegate>
+@property (nonatomic, copy) NSString *username;
+- (void)cancel;
+- (void)done;
 @end
 
 @implementation GHSettingsViewController
+@synthesize delegate;
+@synthesize username;
 
 - (id)initWithStyle:(UITableViewStyle)style {
   return [super initWithStyle:UITableViewStyleGrouped];
@@ -35,14 +40,26 @@
   
   self.title = @"Settings";
   
-  UIBarButtonItem *doneItem = [UIBarButtonItem withSystemItem:UIBarButtonSystemItemDone 
+  UIBarButtonItem *doneItem = [UIBarButtonItem withSystemItem:UIBarButtonSystemItemCancel
                                                        target:self
-                                                       action:@selector(close)];
+                                                       action:@selector(cancel)];
   self.navigationItem.leftBarButtonItem = doneItem;
+  
+  id path = [NSIndexPath indexPathForRow:0 inSection:0];
+  id cell = [self.tableView cellForRowAtIndexPath:path];
+  id textField = objc_getAssociatedObject(cell, @"textField");
+  [textField becomeFirstResponder];
 }
 
-- (void)close {
+- (void)done {
   [self dismissModalViewControllerAnimated:YES];
+  [self.delegate settingsController:[[self retain] autorelease]
+              didFinishWithUsername:self.username];
+}
+
+- (void)cancel {
+  [self dismissModalViewControllerAnimated:YES];
+  [self.delegate settingsControllerDidCancel:[[self retain] autorelease]];
 }
 
 #pragma mark -
@@ -70,6 +87,25 @@
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
   if (cell == nil) {
     cell = [UITableViewCell cellWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    CGSize contentSize = cell.contentView.frame.size;
+    CGRect textFieldRect = CGRectMake(10.0, 0.0, 290.0, contentSize.height);
+    
+    UITextField *textField = [[UITextField alloc] initWithFrame:textFieldRect];
+    textField.placeholder = @"your username";
+    textField.font = [UIFont systemFontOfSize:15.0f];
+    textField.returnKeyType = UIReturnKeyDone;
+    textField.autocorrectionType = UITextAutocorrectionTypeNo;
+		textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
+		textField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+		textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+		textField.delegate = self;
+    
+    [cell.contentView addSubview:textField];
+    objc_setAssociatedObject(cell, @"textField", textField, OBJC_ASSOCIATION_ASSIGN);
+    
+    [textField release];
   }
   
   return cell;
@@ -77,9 +113,17 @@
 
 
 #pragma mark -
-#pragma mark UITableViewDelegate
+#pragma mark UITextFieldDelegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+  self.username = textField.text;
+  return YES;
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+  self.username = textField.text;
+  [self done];
+  return NO;
 }
 
 @end

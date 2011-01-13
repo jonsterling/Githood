@@ -33,4 +33,5 @@
 
 @protocol GHTableModelDelegate
 - (void)dataDidChange;
+- (void)refreshFailed;
 @end

@@ -12,6 +12,9 @@
 - (void)configureToolbar;
 @end
 
+@interface GHReposTableViewController (SettingsDelegate) <GHSettingsDelegate>
+@end
+
 @interface GHReposTableViewController (TypeSpecification)
 @property (nonatomic,readonly) GHReposTableModel *tableModel;
 @end
@@ -29,9 +32,7 @@
   self.title = @"Repositories";
   self.tableView.rowHeight = 65;
   
-  self.tableModel.username = @"jonsterling";
   self.tableModel.delegate = self;
-  
   self.statusItem = [GHCountStatusItemController withSingularType:@"repository"
                                                        pluralType:@"repositories"];
   self.statusItem.dataSource = self.tableModel;
@@ -67,6 +68,8 @@
 
 - (void)showSettings {
   id settings = [GHSettingsViewController new];
+  [settings setDelegate:self];
+  
   id controller = [[UINavigationController alloc] initWithRootViewController:settings];
   [self presentModalViewController:controller animated:YES];
   
@@ -80,6 +83,20 @@
 - (void)dataDidChange {
   [super dataDidChange];
   [self.statusItem refreshLabel];
+}
+
+- (void)refreshFailed {
+  [super refreshFailed];
+  
+  UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Login"
+                                                      message:@"Please provide your Github username"
+                                                     delegate:nil
+                                            cancelButtonTitle:@"OK"
+                                            otherButtonTitles:nil];
+  [alertView show];
+  [alertView release];
+  
+  [self performSelector:@selector(showSettings) withObject:nil afterDelay:0.5];
 }
 
 #pragma mark -
@@ -98,6 +115,20 @@
   id <GitHubRepository> repository = [self.tableModel objectAtIndexPath:path];
   id controller = [GHCommitsTableViewController withRepository:repository];
   [self.navigationController pushViewController:controller animated:YES];
+}
+
+@end
+
+
+@implementation GHReposTableViewController (SettingsDelegate)
+
+- (void)settingsController:(GHSettingsViewController *)controller didFinishWithUsername:(NSString *)name {  
+  self.tableModel.username = name;
+  [self refreshData];
+}
+
+- (void)settingsControllerDidCancel:(GHSettingsViewController *)controller {
+  
 }
 
 @end

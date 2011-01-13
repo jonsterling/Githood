@@ -81,6 +81,10 @@
   self.refreshItem.state = GHLoadingCompleteState;
 }
 
+- (void)refreshFailed {
+  self.refreshItem.state = GHLoadingCompleteState;
+}
+
 #pragma mark -
 #pragma mark LRTableModelEventListener
 

@@ -7,9 +7,15 @@
 @end
 
 @implementation GHReposTableModel
-@synthesize username;
+@dynamic username;
+@dynamic sortedRepositories;
 
 - (void)refreshData {
+  if (self.username.length == 0) {
+    [self.delegate refreshFailed];
+    return;
+  }
+  
   [self removeAllObjects];
   [GitHubRepositoryServiceFactory requestRepositoriesWatchedByUser:self.username
                                                           delegate:self];
@@ -17,6 +23,16 @@
 
 - (void)gitHubService:(id <GitHubService>)service gotRepository:(id <GitHubRepository>)repository {
   [self addObject:repository toSection:0];
+}
+
+- (NSString *)username {
+  return [[NSUserDefaults standardUserDefaults] valueForKey:@"username"];
+}
+
+- (void)setUsername:(NSString *)username {
+  id defaults = [NSUserDefaults standardUserDefaults];
+  [defaults setValue:username forKey:@"username"];
+  [defaults synchronize];
 }
 
 - (NSArray *)sortedRepositories {
@@ -31,6 +47,11 @@
 
 - (NSUInteger)numberOfItemsForStatusItem:(id)controller; {
   return self.sortedRepositories.count;
+}
+
+- (void)gitHubService:(id<GitHubService>)service didFailWithError:(NSError *)error {
+  [super gitHubService:service didFailWithError:error];
+  self.username = nil;
 }
 
 @end

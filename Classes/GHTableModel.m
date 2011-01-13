@@ -139,6 +139,7 @@
 
 - (void)gitHubService:(id <GitHubService>)gitHubService didFailWithError:(NSError *)error {
   NSLog(@"%@, %@",NSStringFromSelector(_cmd),error);
+  [self.delegate refreshFailed];
 }
 
 - (void)gitHubServiceDone:(id <GitHubService>)gitHubService {

@@ -1,5 +1,12 @@
 #import <UIKit/UIKit.h>
 
-@interface GHSettingsViewController : UITableViewController
+@protocol GHSettingsDelegate;
 
+@interface GHSettingsViewController : UITableViewController
+@property (nonatomic,assign) id <GHSettingsDelegate> delegate;
+@end
+
+@protocol GHSettingsDelegate
+- (void)settingsController:(GHSettingsViewController *)controller didFinishWithUsername:(NSString *)name;
+- (void)settingsControllerDidCancel:(GHSettingsViewController *)controller;
 @end
