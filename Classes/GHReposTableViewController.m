@@ -87,6 +87,7 @@
 
 - (void)refreshFailed {
   [super refreshFailed];
+  [self.statusItem refreshLabel];
   
   UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Login"
                                                       message:@"Please provide your Github username"
