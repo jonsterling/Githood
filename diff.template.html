@@ -1,14 +1,26 @@
 <html>
 
 <head>
-<style type="text/css">
-</style>
+<link href="https://gist.github.com/raw/148782/ece7eb72e2b55be643badf6fb03a7ac6e6dfa295/shThemeGitHub.css" rel="stylesheet" type="text/css" />
+<script src="http://alexgorbatchev.com/pub/sh/current/scripts/shCore.js" type="text/javascript"></script>
+<script src="http://alexgorbatchev.com/pub/sh/current/scripts/shAutoloader.js" type="text/javascript"></script>
+<script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushDiff.js"></script>
 </head>
+  
+<style type="text/css">
+  * {
+    font:normal 9px/10px monospace !important;
+    background-color: #fefefe;
+  }
+</style>
 
-<body>
-<pre><code>
-$diff
-</code></pre>
-</body>
+<pre class="brush: diff">
+  $diff
+</pre>
 
+<script type="text/javascript">
+  SyntaxHighlighter.defaults['gutter'] = false
+  SyntaxHighlighter.defaults['toolbar'] = false
+  SyntaxHighlighter.all()
+</script>
 </html>

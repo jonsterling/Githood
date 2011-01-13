@@ -25,8 +25,7 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  
-  [self.webView loadHTMLString:self.htmlDiff baseURL:[NSURL URLWithString:@"http://github.com/"]];
+  [self.webView loadHTMLString:self.htmlDiff baseURL:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
