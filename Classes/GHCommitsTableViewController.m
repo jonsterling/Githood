@@ -4,9 +4,12 @@
 #import "GitHubRepository.h"
 #import "GHChangesTableViewController.h"
 #import "GHCountStatusItemController.h"
+#import "GHDockingTableHeaderViewController.h"
+#import "GHHeaderView.h"
 
 @interface GHCommitsTableViewController () <GHTableModelDelegate>
 @property (nonatomic,retain) GHCountStatusItemController *statusItem;
+@property (nonatomic,retain) GHDockingTableHeaderViewController *headerController;
 @end
 
 @interface GHCommitsTableViewController (TypeSpecification)
@@ -17,6 +20,7 @@
 @implementation GHCommitsTableViewController
 @synthesize repository;
 @synthesize statusItem;
+@synthesize headerController;
 
 + (id)withRepository:(id <GitHubRepository>)repository {
   return [[[self alloc] initWithRepository:repository] autorelease];
@@ -36,11 +40,16 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   
-  self.title = @"Commits";
+  self.title = self.repository.name;
   self.tableView.rowHeight = 65; 
   
   self.tableModel.repository = self.repository;
   self.tableModel.delegate = self;
+  
+  id headerView = [GHHeaderView withText:self.repository.desc];
+  self.headerController = [GHDockingTableHeaderViewController withTableView:self.tableView
+                                                                 headerView:headerView];
+  
   
   self.statusItem = [GHCountStatusItemController withSingularType:@"commit"
                                                        pluralType:@"commits"];
@@ -89,6 +98,14 @@
   id <GitHubCommit> commit = [self.tableModel objectAtIndexPath:path];
   id controller = [GHChangesTableViewController withCommit:commit fromRepository:self.repository];
   [self.navigationController pushViewController:controller animated:YES];
+}
+
+
+#pragma mark -
+#pragma mark UIScrollViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+  [self.headerController scrollViewDidScroll:scrollView];
 }
 
 @end
