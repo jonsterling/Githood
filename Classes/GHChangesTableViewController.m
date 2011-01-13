@@ -12,7 +12,6 @@
 
 @interface GHChangesTableViewController ()
 @property (nonatomic,retain) GHChangesStatusItemController *statusItem;
-@property (nonatomic,retain) GHDockingTableHeaderViewController *headerController;
 @end
 
 @interface GHChangesTableViewController (TypeSpecification)
@@ -23,18 +22,12 @@
 @synthesize commit;
 @synthesize repository;
 @synthesize statusItem;
-@synthesize headerController;
 
 - (void)dealloc {
   [commit release];
   [repository release];
   [statusItem release];
-  [headerController release];
   [super dealloc];
-}
-
-+ (Class)modelClass {
-  return [GHChangesTableModel class];
 }
 
 + (id)withCommit:(id <GitHubCommit>)commit 
@@ -61,11 +54,6 @@
   self.tableModel.repository = self.repository;
   
   self.tableView.rowHeight = 44.0f;
-  
-  id headerView = [GHHeaderView withText:self.commit.message];
-  self.headerController = [GHDockingTableHeaderViewController withTableView:self.tableView
-                                                                 headerView:headerView];
-  
   self.statusItem = [GHChangesStatusItemController controller];
   self.statusItem.dataSource = self.tableModel;
   
@@ -80,19 +68,25 @@
   cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 }
 
+
+#pragma mark -
+#pragma mark GHConcreteTableViewController
+
++ (Class)modelClass {
+  return [GHChangesTableModel class];
+}
+
+- (NSString *)headerText {
+  return self.commit.message;
+}
+
+
 #pragma mark -
 #pragma mark GHTableModelDelegate
 
 - (void)dataDidChange {
   [super dataDidChange];
   [self.statusItem refreshLabel];
-}
-
-#pragma mark -
-#pragma mark UIScrollViewDelegate
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-  [self.headerController scrollViewDidScroll:scrollView];
 }
 
 @end

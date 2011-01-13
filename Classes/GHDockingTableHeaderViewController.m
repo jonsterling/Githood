@@ -2,7 +2,6 @@
 
 @interface GHDockingTableHeaderViewController ()
 @property (nonatomic,readonly) UITableView *tableView;
-@property (nonatomic,readonly) UIView *headerView;
 @property (nonatomic,readonly) BOOL isHeaderDocked;
 @end
 
@@ -12,7 +11,7 @@
 @dynamic isHeaderDocked;
 
 + (id)withTableView:(UITableView *)tableView headerView:(id)headerView  {
-  return [[self alloc] initWithTableView:tableView headerView:headerView];
+  return [[[self alloc] initWithTableView:tableView headerView:headerView] autorelease];
 }
 
 - (id)initWithTableView:(UITableView *)aTableView headerView:(id)aHeaderView {

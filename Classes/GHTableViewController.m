@@ -4,12 +4,16 @@
 #import "GHRefreshBarButtonController.h"
 #import "UIBarButtonItem+Custom.h"
 #import "GHStyler.h"
+#import "GHDockingTableHeaderViewController.h"
+#import "GHHeaderView.h"
 
 @interface GHTableViewController ()
 @property (nonatomic,retain,readwrite) GHRefreshBarButtonController *refreshItem;
+@property (nonatomic,retain,readwrite) GHDockingTableHeaderViewController *headerController;
 @end
 
 @implementation GHTableViewController
+@synthesize headerController;
 @synthesize tableModel;
 @synthesize refreshItem;
 
@@ -23,6 +27,7 @@
 - (void)dealloc {
   [tableModel release];
   [refreshItem release];
+  [headerController release];
   [super dealloc];
 }
 
@@ -47,6 +52,12 @@
   self.tableModel.delegate = self;
   
   [self.tableModel addTableModelListener:self];
+  
+  if ([self respondsToSelector:@selector(headerText)]) {
+    id headerView = [GHHeaderView withText:[self performSelector:@selector(headerText)]];
+    self.headerController = [GHDockingTableHeaderViewController withTableView:self.tableView
+                                                                   headerView:headerView];
+  }
 }
 
 - (void)setSoleToolbarItem:(UIBarButtonItem *)item {
@@ -119,8 +130,15 @@
 }
 
 - (void)configureCell:(UITableViewCell *)cell forObject:(id)object atIndexPath:(id)path {
-
+  
 }
 
+
+#pragma mark -
+#pragma mark UIScrollViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+  [self.headerController scrollViewDidScroll:scrollView];
+}
 
 @end

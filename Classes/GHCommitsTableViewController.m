@@ -9,7 +9,6 @@
 
 @interface GHCommitsTableViewController () <GHTableModelDelegate>
 @property (nonatomic,retain) GHCountStatusItemController *statusItem;
-@property (nonatomic,retain) GHDockingTableHeaderViewController *headerController;
 @end
 
 @interface GHCommitsTableViewController (TypeSpecification)
@@ -20,7 +19,6 @@
 @implementation GHCommitsTableViewController
 @synthesize repository;
 @synthesize statusItem;
-@synthesize headerController;
 
 + (id)withRepository:(id <GitHubRepository>)repository {
   return [[[self alloc] initWithRepository:repository] autorelease];
@@ -33,10 +31,6 @@
   } return self;
 }
 
-+ (Class)modelClass {
-  return [GHCommitsTableModel class];
-}
-
 - (void)viewDidLoad {
   [super viewDidLoad];
   
@@ -44,12 +38,7 @@
   self.tableView.rowHeight = 65; 
   
   self.tableModel.repository = self.repository;
-  self.tableModel.delegate = self;
-  
-  id headerView = [GHHeaderView withText:self.repository.desc];
-  self.headerController = [GHDockingTableHeaderViewController withTableView:self.tableView
-                                                                 headerView:headerView];
-  
+  self.tableModel.delegate = self;  
   
   self.statusItem = [GHCountStatusItemController withSingularType:@"commit"
                                                        pluralType:@"commits"];
@@ -66,6 +55,20 @@
   [statusItem release];
   [super dealloc];
 }
+
+
+#pragma mark -
+#pragma mark GHConcreteTableViewController
+
++ (Class)modelClass {
+  return [GHCommitsTableModel class];
+}
+
+
+- (NSString *)headerText {
+  return self.repository.desc;
+}
+
 
 #pragma mark -
 #pragma mark GHTableModelDelegate
@@ -98,14 +101,6 @@
   id <GitHubCommit> commit = [self.tableModel objectAtIndexPath:path];
   id controller = [GHChangesTableViewController withCommit:commit fromRepository:self.repository];
   [self.navigationController pushViewController:controller animated:YES];
-}
-
-
-#pragma mark -
-#pragma mark UIScrollViewDelegate
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-  [self.headerController scrollViewDidScroll:scrollView];
 }
 
 @end

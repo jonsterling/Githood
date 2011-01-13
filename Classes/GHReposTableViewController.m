@@ -22,10 +22,6 @@
 @implementation GHReposTableViewController
 @synthesize statusItem;
 
-+ (Class)modelClass {
-  return [GHReposTableModel class];
-}
-
 - (void)viewDidLoad {
   [super viewDidLoad];
   
@@ -77,6 +73,14 @@
   [settings release];
   [controller release];
 }
+
+#pragma mark -
+#pragma mark GHConcreteTableViewController
+
++ (Class)modelClass {
+  return [GHReposTableModel class];
+}
+
 
 #pragma mark -
 #pragma mark GHTableModelDelegate
