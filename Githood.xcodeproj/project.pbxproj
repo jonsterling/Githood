@@ -73,6 +73,7 @@
 		FC40113D12DD78700050B3E1 /* GHRefreshBarButtonController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC40113C12DD78700050B3E1 /* GHRefreshBarButtonController.m */; };
 		FC40114212DD81B10050B3E1 /* GHChangesStatusItemController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC40114012DD81B10050B3E1 /* GHChangesStatusItemController.m */; };
 		FC40114712DD837B0050B3E1 /* GHChangesStatusItemController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC40114612DD837B0050B3E1 /* GHChangesStatusItemController.xib */; };
+		FC4E4CAF12DEF9020009C77F /* GHWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC4E4CAE12DEF9020009C77F /* GHWebView.m */; };
 		FC63C8F112DEDFEA00C3FF5C /* GHDiffViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC63C8EF12DEDFEA00C3FF5C /* GHDiffViewController.m */; };
 		FC63C8F212DEDFEA00C3FF5C /* GHDiffViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC63C8F012DEDFEA00C3FF5C /* GHDiffViewController.xib */; };
 		FC63C8F412DEE30000C3FF5C /* diff.template.html in Resources */ = {isa = PBXBuildFile; fileRef = FC63C8F312DEE30000C3FF5C /* diff.template.html */; };
@@ -236,6 +237,8 @@
 		FC40113F12DD81B10050B3E1 /* GHChangesStatusItemController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHChangesStatusItemController.h; sourceTree = "<group>"; };
 		FC40114012DD81B10050B3E1 /* GHChangesStatusItemController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHChangesStatusItemController.m; sourceTree = "<group>"; };
 		FC40114612DD837B0050B3E1 /* GHChangesStatusItemController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GHChangesStatusItemController.xib; sourceTree = "<group>"; };
+		FC4E4CAD12DEF9020009C77F /* GHWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHWebView.h; sourceTree = "<group>"; };
+		FC4E4CAE12DEF9020009C77F /* GHWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHWebView.m; sourceTree = "<group>"; };
 		FC63C8EE12DEDFEA00C3FF5C /* GHDiffViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHDiffViewController.h; sourceTree = "<group>"; };
 		FC63C8EF12DEDFEA00C3FF5C /* GHDiffViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHDiffViewController.m; sourceTree = "<group>"; };
 		FC63C8F012DEDFEA00C3FF5C /* GHDiffViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GHDiffViewController.xib; sourceTree = "<group>"; };
@@ -639,6 +642,8 @@
 			children = (
 				FC7F764B12DE462E00BD23BB /* GHStyler.h */,
 				FC7F764C12DE462E00BD23BB /* GHStyler.m */,
+				FC4E4CAD12DEF9020009C77F /* GHWebView.h */,
+				FC4E4CAE12DEF9020009C77F /* GHWebView.m */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -835,6 +840,7 @@
 				FC7F765C12DE4A5900BD23BB /* GHGroupedTableView.m in Sources */,
 				FC7F766212DE65FF00BD23BB /* GHDockingTableHeaderViewController.m in Sources */,
 				FC63C8F112DEDFEA00C3FF5C /* GHDiffViewController.m in Sources */,
+				FC4E4CAF12DEF9020009C77F /* GHWebView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

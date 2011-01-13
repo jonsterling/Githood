@@ -54,4 +54,19 @@
   [super dealloc];
 }
 
+#pragma mark -
+#pragma mark UIWebViewDelegate
+
+- (void)webViewDidStartLoad:(UIWebView *)webView {
+  [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+  [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+}
+
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
+  [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+}
+
 @end
