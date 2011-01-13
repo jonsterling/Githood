@@ -7,4 +7,5 @@
 @interface GHChangesTableModel : GHTableModel <GHConcreteTableModel,GHChangesStatusItemDataSource>
 @property (nonatomic,retain) id <GitHubCommit> commit;
 @property (nonatomic,retain) id <GitHubRepository> repository;
+- (NSString *)diffAtIndex:(NSUInteger)index;
 @end

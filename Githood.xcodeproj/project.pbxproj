@@ -73,6 +73,9 @@
 		FC40113D12DD78700050B3E1 /* GHRefreshBarButtonController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC40113C12DD78700050B3E1 /* GHRefreshBarButtonController.m */; };
 		FC40114212DD81B10050B3E1 /* GHChangesStatusItemController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC40114012DD81B10050B3E1 /* GHChangesStatusItemController.m */; };
 		FC40114712DD837B0050B3E1 /* GHChangesStatusItemController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC40114612DD837B0050B3E1 /* GHChangesStatusItemController.xib */; };
+		FC63C8F112DEDFEA00C3FF5C /* GHDiffViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC63C8EF12DEDFEA00C3FF5C /* GHDiffViewController.m */; };
+		FC63C8F212DEDFEA00C3FF5C /* GHDiffViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC63C8F012DEDFEA00C3FF5C /* GHDiffViewController.xib */; };
+		FC63C8F412DEE30000C3FF5C /* diff.template.html in Resources */ = {isa = PBXBuildFile; fileRef = FC63C8F312DEE30000C3FF5C /* diff.template.html */; };
 		FC7F763C12DE320B00BD23BB /* 261.png in Resources */ = {isa = PBXBuildFile; fileRef = FC7F763B12DE320B00BD23BB /* 261.png */; };
 		FC7F763F12DE323500BD23BB /* UIBarButtonItem+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7F763E12DE323500BD23BB /* UIBarButtonItem+Custom.m */; };
 		FC7F764112DE382A00BD23BB /* 262.png in Resources */ = {isa = PBXBuildFile; fileRef = FC7F764012DE382A00BD23BB /* 262.png */; };
@@ -233,6 +236,10 @@
 		FC40113F12DD81B10050B3E1 /* GHChangesStatusItemController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHChangesStatusItemController.h; sourceTree = "<group>"; };
 		FC40114012DD81B10050B3E1 /* GHChangesStatusItemController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHChangesStatusItemController.m; sourceTree = "<group>"; };
 		FC40114612DD837B0050B3E1 /* GHChangesStatusItemController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GHChangesStatusItemController.xib; sourceTree = "<group>"; };
+		FC63C8EE12DEDFEA00C3FF5C /* GHDiffViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHDiffViewController.h; sourceTree = "<group>"; };
+		FC63C8EF12DEDFEA00C3FF5C /* GHDiffViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHDiffViewController.m; sourceTree = "<group>"; };
+		FC63C8F012DEDFEA00C3FF5C /* GHDiffViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GHDiffViewController.xib; sourceTree = "<group>"; };
+		FC63C8F312DEE30000C3FF5C /* diff.template.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = diff.template.html; sourceTree = "<group>"; };
 		FC7F763B12DE320B00BD23BB /* 261.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 261.png; sourceTree = "<group>"; };
 		FC7F763D12DE323500BD23BB /* UIBarButtonItem+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIBarButtonItem+Custom.h"; path = "Classes/UIBarButtonItem+Custom.h"; sourceTree = "<group>"; };
 		FC7F763E12DE323500BD23BB /* UIBarButtonItem+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIBarButtonItem+Custom.m"; path = "Classes/UIBarButtonItem+Custom.m"; sourceTree = "<group>"; };
@@ -484,6 +491,9 @@
 				FC1D7A2612D806B700AA4AB1 /* GHCommitsTableViewController.m */,
 				FCC39D5812DAB4D100364773 /* GHChangesTableViewController.h */,
 				FCC39D5912DAB4D100364773 /* GHChangesTableViewController.m */,
+				FC63C8EE12DEDFEA00C3FF5C /* GHDiffViewController.h */,
+				FC63C8EF12DEDFEA00C3FF5C /* GHDiffViewController.m */,
+				FC63C8F012DEDFEA00C3FF5C /* GHDiffViewController.xib */,
 				FC7F765F12DE657A00BD23BB /* Components */,
 				FC7F764512DE3A8500BD23BB /* Settings */,
 			);
@@ -541,6 +551,7 @@
 				FC32581912D6738E00EB47A3 /* MainWindow.xib */,
 				FC32582C12D6738E00EB47A3 /* GithoodTests-Info.plist */,
 				FC32582E12D6738E00EB47A3 /* InfoPlist.strings */,
+				FC63C8F312DEE30000C3FF5C /* diff.template.html */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -728,6 +739,8 @@
 				FC7F763C12DE320B00BD23BB /* 261.png in Resources */,
 				FC7F764112DE382A00BD23BB /* 262.png in Resources */,
 				FC7F765E12DE5BCA00BD23BB /* 262@2x.png in Resources */,
+				FC63C8F212DEDFEA00C3FF5C /* GHDiffViewController.xib in Resources */,
+				FC63C8F412DEE30000C3FF5C /* diff.template.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -821,6 +834,7 @@
 				FC7F764D12DE462E00BD23BB /* GHStyler.m in Sources */,
 				FC7F765C12DE4A5900BD23BB /* GHGroupedTableView.m in Sources */,
 				FC7F766212DE65FF00BD23BB /* GHDockingTableHeaderViewController.m in Sources */,
+				FC63C8F112DEDFEA00C3FF5C /* GHDiffViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

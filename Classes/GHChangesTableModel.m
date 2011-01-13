@@ -31,6 +31,9 @@
   return sections[index];
 }
 
+- (NSString *)diffAtIndex:(NSUInteger)index {
+  return [self.commit.modifiedDiff objectAtIndex:index];
+}
 
 #pragma mark -
 #pragma mark GitHubServiceGotCommitDelegate

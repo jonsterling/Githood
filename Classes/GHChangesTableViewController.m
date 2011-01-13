@@ -6,6 +6,8 @@
 #import "GHChangesTableModel.h"
 #import "GHChangesStatusItemController.h"
 
+#import "GHDiffViewController.h"
+
 #import "GHHeaderView.h"
 #import "GHDockingTableHeaderViewController.h"
 #import "GHStyler.h"
@@ -65,7 +67,12 @@
 - (void)configureCell:(UITableViewCell *)cell forObject:(id)object atIndexPath:(NSIndexPath *)path {
   cell.textLabel.text = object;
   cell.textLabel.font = [UIFont boldSystemFontOfSize:[UIFont systemFontSize]];
-  cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+  
+  if (path.section == 0) {
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+  } else {
+    cell.accessoryType = UITableViewCellAccessoryNone;
+  }
 }
 
 
@@ -87,6 +94,21 @@
 - (void)dataDidChange {
   [super dataDidChange];
   [self.statusItem refreshLabel];
+}
+
+#pragma mark -
+#pragma mark UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)path {
+  if (path.section == 0) {
+    id diff = [self.tableModel diffAtIndex:path.row];
+    id fileName = [self.tableModel.commit.modified objectAtIndex:path.row];
+    
+    id controller = [GHDiffViewController withDiff:diff ofFile:fileName];
+    [self.navigationController pushViewController:controller animated:YES];
+  } else {
+    [tableView deselectRowAtIndexPath:path animated:YES];
+  }
 }
 
 @end
