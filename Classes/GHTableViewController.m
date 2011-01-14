@@ -7,7 +7,10 @@
 #import "GHDockingTableHeaderViewController.h"
 #import "GHHeaderView.h"
 
-@interface GHTableViewController ()
+@interface GHTableViewController () {
+  BOOL hasRefreshedOnLoad;
+}
+
 @property (nonatomic,retain,readwrite) GHRefreshController *refreshItem;
 @property (nonatomic,retain,readwrite) GHDockingTableHeaderViewController *headerController;
 @end
@@ -75,7 +78,11 @@
 
 - (void)viewDidAppear:(BOOL)animated {
   [super viewDidAppear:animated];
-  [self refreshData];
+  
+  if (!hasRefreshedOnLoad) {
+    [self refreshData];
+    hasRefreshedOnLoad = YES;
+  }
 }
 
 - (void)refreshData {
