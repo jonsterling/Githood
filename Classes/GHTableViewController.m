@@ -1,14 +1,14 @@
 #import <QuartzCore/QuartzCore.h>
 #import "GHTableViewController.h"
 #import "GHTableModel.h"
-#import "GHRefreshBarButtonController.h"
+#import "GHRefreshController.h"
 #import "UIBarButtonItem+Custom.h"
 #import "GHStyler.h"
 #import "GHDockingTableHeaderViewController.h"
 #import "GHHeaderView.h"
 
 @interface GHTableViewController ()
-@property (nonatomic,retain,readwrite) GHRefreshBarButtonController *refreshItem;
+@property (nonatomic,retain,readwrite) GHRefreshController *refreshItem;
 @property (nonatomic,retain,readwrite) GHDockingTableHeaderViewController *headerController;
 @end
 
@@ -42,7 +42,7 @@
   
   [GHStyler styleNavigationController:self.navigationController];
   
-  self.refreshItem = [GHRefreshBarButtonController withTarget:self
+  self.refreshItem = [GHRefreshController withTarget:self
                                                        action:@selector(refreshData) 
                                                      delegate:self];
   
@@ -73,17 +73,23 @@
   [self.navigationController setToolbarHidden:NO animated:YES];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+  [super viewDidAppear:animated];
+  [self refreshData];
+}
+
 - (void)refreshData {
   [self.tableModel refreshData];
   self.refreshItem.state = GHLoadingInProgressState;
 }
 
 #pragma mark -
-#pragma mark GHRefreshBarButtonDelegate
+#pragma mark GHRefreshControllerDelegate
 
 - (void)placeRefreshButton:(UIBarButtonItem *)refreshButton {
   [self.navigationItem setRightBarButtonItem:refreshButton animated:YES];
 }
+
 
 #pragma mark -
 #pragma mark GHTableModelDelegate 

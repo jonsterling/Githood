@@ -46,8 +46,6 @@
   self.statusItem.dataSource = self.tableModel;
   
   [self setSoleToolbarItem:self.statusItem.buttonItem];
-  
-  [self refreshData];
 }
 
 - (void)dealloc {

@@ -1,17 +1,17 @@
-#import "GHRefreshBarButtonController.h"
+#import "GHRefreshController.h"
 
-@interface GHRefreshBarButtonController ()
+@interface GHRefreshController ()
 @property (nonatomic,assign) id buttonTarget;
 @property (nonatomic,readwrite) SEL buttonAction;
 
-@property (nonatomic,retain,readonly) UIBarButtonItem *refreshItem;
-@property (nonatomic,retain,readonly) UIBarButtonItem *loadingItem;
+@property (nonatomic,readonly) UIBarButtonItem *refreshItem;
+@property (nonatomic,readonly) UIBarButtonItem *loadingItem;
 
 - (UIBarButtonItem *)buttonForState:(GHLoadingState)aState;
 - (void)messageDelegateWithCurrentState;
 @end
 
-@implementation GHRefreshBarButtonController
+@implementation GHRefreshController
 @synthesize state;
 @synthesize refreshItem;
 @synthesize loadingItem;
@@ -19,18 +19,18 @@
 @synthesize buttonAction;
 @synthesize delegate;
 
-+ (id)withTarget:(id)target action:(SEL)action delegate:(id <GHRefreshBarButtonDelegate>)delegate {
++ (id)withTarget:(id)target action:(SEL)action delegate:(id <GHRefreshControllerDelegate>)delegate {
   return [[[self alloc] initWithTarget:target action:action delegate:delegate] autorelease];
 }
 
-- (id)initWithTarget:(id)target action:(SEL)action delegate:(id <GHRefreshBarButtonDelegate>)aDelegate {
+- (id)initWithTarget:(id)target action:(SEL)action delegate:(id <GHRefreshControllerDelegate>)aDelegate {
   self = [super init];
   if (self != nil) {
     self.buttonTarget = target;
     self.buttonAction = action;
     self.delegate = aDelegate;
     
-    [self.delegate placeRefreshButton:self.refreshItem];
+    [self messageDelegateWithCurrentState];
   } return self;
 }
 
@@ -71,7 +71,9 @@
 }
 
 - (void)messageDelegateWithCurrentState {
-  [self.delegate placeRefreshButton:[self buttonForState:self.state]];
+  if ([(id)self.delegate respondsToSelector:@selector(placeRefreshButton:)]) {
+    [self.delegate placeRefreshButton:[self buttonForState:self.state]];
+  }
 }
 
 - (void)setState:(GHLoadingState)aState {
@@ -82,7 +84,6 @@
 - (void)dealloc {
   [refreshItem release];
   [loadingItem release];
-  [buttonTarget release];
   [super dealloc];
 }
 

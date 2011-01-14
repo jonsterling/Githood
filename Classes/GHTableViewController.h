@@ -1,7 +1,7 @@
 #import <UIKit/UIKit.h>
 #import "LRTableModelEventListener.h"
 #import "LRTableModelCellProvider.h"
-#import "GHRefreshBarButtonController.h"
+#import "GHRefreshController.h"
 #import "GHTableModel.h"
 
 @protocol GHConcreteTableViewController <NSObject>
@@ -13,9 +13,9 @@
 
 @class GHDockingTableHeaderViewController;
 
-@interface GHTableViewController : UITableViewController <LRTableModelEventListener,LRTableModelCellProvider,GHRefreshBarButtonDelegate,GHTableModelDelegate>
+@interface GHTableViewController : UITableViewController <LRTableModelEventListener,LRTableModelCellProvider,GHRefreshControllerDelegate,GHTableModelDelegate>
 @property (nonatomic,retain,readonly) id <GHConcreteTableModel> tableModel;
-@property (nonatomic,retain,readonly) GHRefreshBarButtonController *refreshItem;
+@property (nonatomic,retain,readonly) GHRefreshController *refreshItem;
 @property (nonatomic,retain,readonly) GHDockingTableHeaderViewController *headerController;
 
 - (void)refreshData;

@@ -14,7 +14,7 @@
   NSUInteger adds = [self.dataSource numberAddedForStatusItem:self];
   NSUInteger dels = [self.dataSource numberRemovedForStatusItem:self];
   
-  self.textLabel.text = [NSString stringWithFormat:@"%i %@, %i %@, %i %@",
+  self.textLabel.text = [NSString stringWithFormat:@"%u %@, %u %@, %u %@",
                          mods,@"modified",
                          adds,@"added",
                          dels,@"removed"];

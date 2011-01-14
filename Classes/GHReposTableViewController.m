@@ -34,8 +34,6 @@
   self.statusItem.dataSource = self.tableModel;
   
   [self configureToolbar];
-  
-  [self refreshData];
 }
 
 - (void)configureToolbar {

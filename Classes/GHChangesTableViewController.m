@@ -60,8 +60,6 @@
   self.statusItem.dataSource = self.tableModel;
   
   [self setSoleToolbarItem:self.statusItem.buttonItem];
-  
-  [self refreshData];
 }
 
 - (void)configureCell:(UITableViewCell *)cell forObject:(id)object atIndexPath:(NSIndexPath *)path {
