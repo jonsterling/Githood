@@ -7,15 +7,15 @@
 #import "GHDockingTableHeaderViewController.h"
 #import "GHHeaderView.h"
 
-@interface GHTableViewController () {
-  BOOL hasRefreshedOnLoad;
-}
+@interface GHTableViewController ()
 
+@property (nonatomic,assign) BOOL hasRefreshedOnLoad;
 @property (nonatomic,retain,readwrite) GHRefreshController *refreshItem;
 @property (nonatomic,retain,readwrite) GHDockingTableHeaderViewController *headerController;
 @end
 
 @implementation GHTableViewController
+@synthesize hasRefreshedOnLoad;
 @synthesize headerController;
 @synthesize tableModel;
 @synthesize refreshItem;
