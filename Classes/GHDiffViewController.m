@@ -60,9 +60,21 @@
   id templatePath = [[NSBundle mainBundle] pathForResource:@"diff.template" ofType:@"html"];
   id template = [[NSString alloc] initWithContentsOfFile:templatePath encoding:NSUTF8StringEncoding error:nil];
   
-  id html = [template stringByReplacingOccurrencesOfString:@"$diff" withString:self.rawDiff];
-  [template release];
+  NSDictionary *map = [NSDictionary dictionaryWithObjectsAndKeys:
+                       @"<",@"&lt;",
+                       @">",@"&gt;",
+                       nil];
   
+  id diff = [self.rawDiff mutableCopy];
+  for (id key in map) {
+    [diff replaceOccurrencesOfString:[map objectForKey:key] withString:key options:0 range:NSMakeRange(0, [diff length])];
+  }
+  
+  id html = [template stringByReplacingOccurrencesOfString:@"$diff" withString:diff];
+  [template release];
+  [diff release];
+  
+
   return html;
 }
 
