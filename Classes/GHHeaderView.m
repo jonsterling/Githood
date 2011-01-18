@@ -40,7 +40,7 @@ static CGFloat kOffset = 10.0;
     label.backgroundColor = [UIColor clearColor];
     label.shadowColor = [UIColor whiteColor];
     label.shadowOffset = (CGSize) { 1.0, 1.0 };
-    label.numberOfLines = 3;
+    label.numberOfLines = 0;
     label.lineBreakMode = UILineBreakModeWordWrap;
 
     [self addSubview:label];
@@ -58,7 +58,7 @@ static CGFloat kOffset = 10.0;
                           constrainedToSize:CGSizeMake(insetSize.width, CGFLOAT_MAX)];
 
   self.frame = (CGRect) { self.frame.origin, { textSize.width + 2 * kOffset, textSize.height + 2 * kOffset } };
-  self.label.frame = (CGRect) { self.label.frame.origin, textSize };
+  self.label.frame = (CGRect) {{kOffset,kOffset}, textSize };
 }
 
 - (void)drawRect:(CGRect)rect {
