@@ -67,7 +67,10 @@
   
   id diff = [self.rawDiff mutableCopy];
   for (id key in map) {
-    [diff replaceOccurrencesOfString:[map objectForKey:key] withString:key options:0 range:NSMakeRange(0, [diff length])];
+    [diff replaceOccurrencesOfString:[map objectForKey:key]
+                          withString:key 
+                             options:0
+                               range:NSMakeRange(0, [diff length])];
   }
   
   id html = [template stringByReplacingOccurrencesOfString:@"$diff" withString:diff];
