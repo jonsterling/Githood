@@ -93,6 +93,8 @@
 		FC8CBC3712E2D3AF004B3F43 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FC8CBC3512E2D3AF004B3F43 /* Icon@2x.png */; };
 		FCC39D5B12DAB4D100364773 /* GHChangesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC39D5912DAB4D100364773 /* GHChangesTableViewController.m */; };
 		FCC8A9E312DBC3FF0027A6D1 /* GHChangesTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC8A9E212DBC3FF0027A6D1 /* GHChangesTableModel.m */; };
+		FCFF6FB212E961A10050217F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = FCFF6FB112E961A10050217F /* Default.png */; };
+		FCFF6FB312E961A10050217F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = FCFF6FB112E961A10050217F /* Default.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -203,7 +205,7 @@
 		FC1D7A2612D806B700AA4AB1 /* GHCommitsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHCommitsTableViewController.m; sourceTree = "<group>"; };
 		FC1D7C0512D8145000AA4AB1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		FC1D7D4512D8460100AA4AB1 /* navigation_bar2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = navigation_bar2.png; path = Artwork/navigation_bar2.png; sourceTree = "<group>"; };
-		FC32580612D6738E00EB47A3 /* githood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = githood.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC32580612D6738E00EB47A3 /* Githood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Githood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC32580912D6738E00EB47A3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FC32580B12D6738E00EB47A3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FC32580D12D6738E00EB47A3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -273,6 +275,7 @@
 		FCC39D5912DAB4D100364773 /* GHChangesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHChangesTableViewController.m; sourceTree = "<group>"; };
 		FCC8A9E112DBC3FF0027A6D1 /* GHChangesTableModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHChangesTableModel.h; sourceTree = "<group>"; };
 		FCC8A9E212DBC3FF0027A6D1 /* GHChangesTableModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHChangesTableModel.m; sourceTree = "<group>"; };
+		FCFF6FB112E961A10050217F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -569,6 +572,7 @@
 				FC32582C12D6738E00EB47A3 /* GithoodTests-Info.plist */,
 				FC32582E12D6738E00EB47A3 /* InfoPlist.strings */,
 				FC63C8F312DEE30000C3FF5C /* diff.template.html */,
+				FCFF6FB112E961A10050217F /* Default.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -588,7 +592,7 @@
 		FC32580712D6738E00EB47A3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FC32580612D6738E00EB47A3 /* githood.app */,
+				FC32580612D6738E00EB47A3 /* Githood.app */,
 				FC32582812D6738E00EB47A3 /* GithoodTests.octest */,
 			);
 			name = Products;
@@ -696,7 +700,7 @@
 			);
 			name = Githood;
 			productName = Githood;
-			productReference = FC32580612D6738E00EB47A3 /* githood.app */;
+			productReference = FC32580612D6738E00EB47A3 /* Githood.app */;
 			productType = "com.apple.product-type.application";
 		};
 		FC32582712D6738E00EB47A3 /* GithoodTests */ = {
@@ -759,6 +763,7 @@
 				FC74FD8412E0F0ED00D13BF6 /* GHDiffStatusItemController.xib in Resources */,
 				FC8CBC3612E2D3AF004B3F43 /* Icon.png in Resources */,
 				FC8CBC3712E2D3AF004B3F43 /* Icon@2x.png in Resources */,
+				FCFF6FB212E961A10050217F /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -768,6 +773,7 @@
 			files = (
 				FC32582F12D6738E00EB47A3 /* InfoPlist.strings in Resources */,
 				FC32583112D6738E00EB47A3 /* GithoodTests.h in Resources */,
+				FCFF6FB312E961A10050217F /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
