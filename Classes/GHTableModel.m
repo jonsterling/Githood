@@ -70,18 +70,19 @@
   id section = [[self objectsForSection:sectionIndex] mutableCopy];
   [section addObject:object];
   [self setObjects:section forSection:sectionIndex];  
+  [section release];
   
   NSUInteger rowIndex = [section indexOfObject:object];
   [self notifyListeners:[LRTableModelEvent insertedAtRow:rowIndex section:sectionIndex]];
 }
 
-- (void)insertObject:(id)object atRow:(NSUInteger)row inSection:(NSUInteger)section {
-  id objects = [[self objectsForSection:section] mutableCopy];
-  [objects insertObject:object atIndex:row];
-  [self setObjects:objects forSection:section];
-  [objects release];
+- (void)insertObject:(id)object atRow:(NSUInteger)row inSection:(NSUInteger)sectionIndex {
+  id section = [[self objectsForSection:sectionIndex] mutableCopy];
+  [section insertObject:object atIndex:row];
+  [self setObjects:section forSection:sectionIndex];
+  [section release];
   
-  [self notifyListeners:[LRTableModelEvent insertedAtRow:row section:section]];
+  [self notifyListeners:[LRTableModelEvent insertedAtRow:row section:sectionIndex]];
 }
 
 
