@@ -67,10 +67,8 @@
 }
 
 - (void)addObject:(id)object toSection:(NSUInteger)sectionIndex {
-  id section = [[self objectsForSection:sectionIndex] mutableCopy];
-  [section addObject:object];
+  id section = [[self objectsForSection:sectionIndex] arrayByAddingObject:object];
   [self setObjects:section forSection:sectionIndex];  
-  [section release];
   
   NSUInteger rowIndex = [section indexOfObject:object];
   [self notifyListeners:[LRTableModelEvent insertedAtRow:rowIndex section:sectionIndex]];
