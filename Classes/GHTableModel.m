@@ -128,7 +128,7 @@
 }
 
 - (NSInteger)numberOfRowsInSection:(NSInteger)sectionIndex {
-  return [[self objectsForSection:sectionIndex] count];
+  return [self objectsForSection:sectionIndex].count;
 }
 
 - (id)objectAtIndexPath:(NSIndexPath *)path {
