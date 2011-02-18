@@ -205,7 +205,7 @@
 		FC1D7A2612D806B700AA4AB1 /* GHCommitsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHCommitsTableViewController.m; sourceTree = "<group>"; };
 		FC1D7C0512D8145000AA4AB1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		FC1D7D4512D8460100AA4AB1 /* navigation_bar2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = navigation_bar2.png; path = Artwork/navigation_bar2.png; sourceTree = "<group>"; };
-		FC32580612D6738E00EB47A3 /* Githood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Githood.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC32580612D6738E00EB47A3 /* githood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = githood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC32580912D6738E00EB47A3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FC32580B12D6738E00EB47A3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FC32580D12D6738E00EB47A3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -592,7 +592,7 @@
 		FC32580712D6738E00EB47A3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FC32580612D6738E00EB47A3 /* Githood.app */,
+				FC32580612D6738E00EB47A3 /* githood.app */,
 				FC32582812D6738E00EB47A3 /* GithoodTests.octest */,
 			);
 			name = Products;
@@ -700,7 +700,7 @@
 			);
 			name = Githood;
 			productName = Githood;
-			productReference = FC32580612D6738E00EB47A3 /* Githood.app */;
+			productReference = FC32580612D6738E00EB47A3 /* githood.app */;
 			productType = "com.apple.product-type.application";
 		};
 		FC32582712D6738E00EB47A3 /* GithoodTests */ = {
