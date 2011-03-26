@@ -8,7 +8,7 @@
 #import "GHHeaderView.h"
 
 @interface GHCommitsTableViewController () <GHTableModelDelegate>
-@property (nonatomic,retain) GHCountStatusItemController *statusItem;
+@property (nonatomic, retain) GHCountStatusItemController *statusItem;
 @end
 
 @interface GHCommitsTableViewController (TypeSpecification)

@@ -7,7 +7,7 @@
 #import "UIBarButtonItem+Custom.h"
 
 @interface GHReposTableViewController () <GHTableModelDelegate>
-@property (nonatomic,retain) GHCountStatusItemController *statusItem;
+@property (nonatomic, retain) GHCountStatusItemController *statusItem;
 - (void)showSettings;
 - (void)configureToolbar;
 @end
@@ -16,7 +16,7 @@
 @end
 
 @interface GHReposTableViewController (TypeSpecification)
-@property (nonatomic,readonly) GHReposTableModel *tableModel;
+@property (nonatomic, readonly) GHReposTableModel *tableModel;
 @end
 
 @implementation GHReposTableViewController

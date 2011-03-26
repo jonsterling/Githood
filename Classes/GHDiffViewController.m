@@ -5,8 +5,8 @@
 #import "UIBarButtonItem+Custom.h"
 
 @interface GHDiffViewController () <GHDiffStatusItemDataSource>
-@property (nonatomic,copy) NSString *rawDiff;
-@property (nonatomic,retain) GHDiffStatusItemController *statusItem;
+@property (nonatomic, copy) NSString *rawDiff;
+@property (nonatomic, retain) GHDiffStatusItemController *statusItem;
 - (NSUInteger)numberOfLinesStartingWith:(NSString *)prefix;
 - (NSString *)htmlDiff;
 @end

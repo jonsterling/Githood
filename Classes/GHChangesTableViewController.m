@@ -13,11 +13,11 @@
 #import "GHStyler.h"
 
 @interface GHChangesTableViewController ()
-@property (nonatomic,retain) GHChangesStatusItemController *statusItem;
+@property (nonatomic, retain) GHChangesStatusItemController *statusItem;
 @end
 
 @interface GHChangesTableViewController (TypeSpecification)
-@property (nonatomic,readonly) GHChangesTableModel *tableModel;
+@property (nonatomic, readonly) GHChangesTableModel *tableModel;
 @end
 
 @implementation GHChangesTableViewController

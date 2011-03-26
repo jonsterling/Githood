@@ -4,5 +4,5 @@
 @protocol GitHubRepository;
 
 @interface GHCommitsTableModel : GHTableModel <GHConcreteTableModel,GHCountStatusItemDataSource>
-@property (nonatomic,retain) id <GitHubRepository> repository;
+@property (nonatomic, retain) id <GitHubRepository> repository;
 @end

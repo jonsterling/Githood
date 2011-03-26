@@ -1,8 +1,8 @@
 #import "GHDockingTableHeaderViewController.h"
 
 @interface GHDockingTableHeaderViewController ()
-@property (nonatomic,readonly) UITableView *tableView;
-@property (nonatomic,readonly) BOOL isHeaderDocked;
+@property (nonatomic, readonly) UITableView *tableView;
+@property (nonatomic, readonly) BOOL isHeaderDocked;
 @end
 
 @implementation GHDockingTableHeaderViewController

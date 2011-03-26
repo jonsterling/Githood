@@ -10,8 +10,8 @@
 @interface GHTableViewController ()
 
 @property (nonatomic,assign) BOOL hasRefreshedOnLoad;
-@property (nonatomic,retain,readwrite) GHRefreshController *refreshItem;
-@property (nonatomic,retain,readwrite) GHDockingTableHeaderViewController *headerController;
+@property (nonatomic, retain, readwrite) GHRefreshController *refreshItem;
+@property (nonatomic, retain, readwrite) GHDockingTableHeaderViewController *headerController;
 @end
 
 @implementation GHTableViewController

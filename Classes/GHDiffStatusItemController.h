@@ -3,7 +3,7 @@
 @protocol GHDiffStatusItemDataSource;
 
 @interface GHDiffStatusItemController : GHStatusBarButtonController
-@property (nonatomic,retain) IBOutlet UILabel *textLabel;
+@property (nonatomic, retain) IBOutlet UILabel *textLabel;
 @property (nonatomic,assign) id <GHDiffStatusItemDataSource> dataSource;
 @end
 

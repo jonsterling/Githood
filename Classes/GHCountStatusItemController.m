@@ -1,8 +1,8 @@
 #import "GHCountStatusItemController.h"
 
 @interface GHCountStatusItemController ()
-@property (nonatomic,readonly) NSString *singularType;
-@property (nonatomic,readonly) NSString *pluralType;
+@property (nonatomic, readonly) NSString *singularType;
+@property (nonatomic, readonly) NSString *pluralType;
 @end
 
 @implementation GHCountStatusItemController

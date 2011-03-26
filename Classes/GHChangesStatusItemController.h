@@ -3,7 +3,7 @@
 @protocol GHChangesStatusItemDataSource;
 
 @interface GHChangesStatusItemController : GHStatusBarButtonController
-@property (nonatomic,retain,readonly) IBOutlet UILabel *textLabel;
+@property (nonatomic, retain, readonly) IBOutlet UILabel *textLabel;
 @property (nonatomic,assign) id <GHChangesStatusItemDataSource> dataSource;
 @end
 

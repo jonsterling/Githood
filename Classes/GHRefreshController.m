@@ -2,10 +2,10 @@
 
 @interface GHRefreshController ()
 @property (nonatomic,assign) id buttonTarget;
-@property (nonatomic,readwrite) SEL buttonAction;
+@property (nonatomic, readwrite) SEL buttonAction;
 
-@property (nonatomic,readonly) UIBarButtonItem *refreshItem;
-@property (nonatomic,readonly) UIBarButtonItem *loadingItem;
+@property (nonatomic, readonly) UIBarButtonItem *refreshItem;
+@property (nonatomic, readonly) UIBarButtonItem *loadingItem;
 
 - (UIBarButtonItem *)buttonForState:(GHLoadingState)aState;
 - (void)messageDelegateWithCurrentState;

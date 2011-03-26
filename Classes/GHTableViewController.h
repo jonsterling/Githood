@@ -14,9 +14,9 @@
 @class GHDockingTableHeaderViewController;
 
 @interface GHTableViewController : UITableViewController <LRTableModelEventListener,LRTableModelCellProvider,GHRefreshControllerDelegate,GHTableModelDelegate>
-@property (nonatomic,retain,readonly) id <GHConcreteTableModel> tableModel;
-@property (nonatomic,retain,readonly) GHRefreshController *refreshItem;
-@property (nonatomic,retain,readonly) GHDockingTableHeaderViewController *headerController;
+@property (nonatomic, retain, readonly) id <GHConcreteTableModel> tableModel;
+@property (nonatomic, retain, readonly) GHRefreshController *refreshItem;
+@property (nonatomic, retain, readonly) GHDockingTableHeaderViewController *headerController;
 
 - (void)refreshData;
 - (void)setSoleToolbarItem:(UIBarButtonItem *)item;

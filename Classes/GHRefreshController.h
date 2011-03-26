@@ -6,7 +6,7 @@ typedef enum {
 @protocol GHRefreshControllerDelegate;
 
 @interface GHRefreshController : NSObject
-@property (nonatomic,readwrite) GHLoadingState state;
+@property (nonatomic, readwrite) GHLoadingState state;
 @property (nonatomic,assign) id <GHRefreshControllerDelegate> delegate;
 
 + (id)withTarget:(id)target action:(SEL)action delegate:(id <GHRefreshControllerDelegate>)delegate;
