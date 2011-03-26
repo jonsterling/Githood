@@ -56,7 +56,7 @@
   
   else if (self.isHeaderDocked) {
     [self.headerView removeFromSuperview];
-    [self.tableView addSubview:self.headerView];
+    [self.tableView insertSubview:self.headerView atIndex:2];
   }
 }
 
